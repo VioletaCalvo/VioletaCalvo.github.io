@@ -26,7 +26,7 @@ about_profile_image: images/VioletaCOLOR.jpg
 about_content: | # this will include new lines to allow paragraphs
 I’m an engineer with a 4 year experience creating and building full-stack applications participating in all the phases of software development. I was the only developer for 3 years in my last job. I’m mainly a Meteor full-stack developer, but I have always thought that what I can learn is more important than what I already know. I’m looking for new opportunities ideally working remotely in a startup
 
-  I am most skilled in: <mark>Meteor</mark> and <mark>playing with my son</mark>
+  I am most skilled in: <mark>Meteor</mark> and <mark>learning</mark>
 
 # Projects Section
 # projects_title: Projects
@@ -40,11 +40,12 @@ educaton_title: Education
 # More Section
 # more_title: A Little More About Me
 more_content: | # this will include new lines to allow paragraphs
-  Alongside my interests in networks and software engineering some of my other interests and hobbies are:
-   - Rock climbing
-   - Gaming
+  When I'm not creating software these are my favourites activities:
+   - Playing with my 2 year-old son
+   - Playing guitar and singing
    - Knitting
-   - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
+   - Taking and editing photos
+   -
 
 # Footer
 footer_show_references: true
