@@ -1,4 +1,4 @@
-- layout: left
+- layout: top-middle
   name: Euskal Herriko Unibertsitatea
   dates: 2013 - 2014
   qualification: Master of Science in Engineering in Embedded Systems
@@ -9,7 +9,7 @@
   #
   #   I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
 
-- layout: left
+- layout: top-middle
   name: Universidad Pública de Navarra
   dates: 2009 - 2016
   qualification: (BCs) Telecommunications Technical Engineer - Sound & Image Specialist
@@ -20,7 +20,7 @@
   #
   #   I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
 
-- layout: left
+- layout: top-middle
   name: Universidad Pública de Navarra
   dates: 1999 - 2003
   qualification: (BCs) Industrial Technical Engineer - Electrical Specialist
@@ -31,7 +31,7 @@
   #
   #   I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
 
-- layout: left
+- layout: top-middle
   name: Universidad de Leon
   dates: 2014 - 2015
   qualification: (BCs) Electrical Engineering Degree
