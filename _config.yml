@@ -1,12 +1,12 @@
 # Site
-#repository: VioletaCalvo/jekyll-forked-resume
+repository: VioletaCalvo/jekyll-forked-resume
 # favicon: images/favicon.ico
 
 # Personal info
 name: Violeta CALVO
 title: Full Stack Engineer
 email: violeta.itt@gmail.com
-website: www.github.com/VioletaCalvo/jekyll-forked-resume
+# website: www.github.com/VioletaCalvo/jekyll-forked-resume
 
 # Social links
 # twitter_username: facespics
