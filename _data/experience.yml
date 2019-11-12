@@ -51,22 +51,11 @@
 
 - layout: left
   company: MATIS HISPANIA for GAMESA
-  link: https://www.dbizi.com/about/station/
-  job_title: Control Software Support Engineer
-  dates: July 2007 - Jun 2009
-  quote: >
-   Even if my main mission was to design 3D mechanical parts, I also developed some software tools that helped all the mechanical engineering team to save time produce 2D plans. I developed this software using VBA for SolidWorks and it helped us to reduce the time from a day to about an hour each time we needed to produce plans.
-  description: | # this will include new lines to allow paragraphs
-    - I designed with my coworker the first auto-diagnosis algorithm for the wind turbines. This new algorithm was part of the preventive and corrective maintenance.
-    - I analyze and did the analysis and error detection in control software for wind turbines.
-
-- layout: left
-  company: MATIS HISPANIA for GAMESA
   link: https://www.siemensgamesa.com/
   job_title: Control Software Support Engineer
   dates: July 2007 - Jun 2009
-  quote: >
-   Even if my main mission was to design 3D mechanical parts, I also developed some software tools that helped all the mechanical engineering team to save time produce 2D plans. I developed this software using VBA for SolidWorks and it helped us to reduce the time from a day to about an hour each time we needed to produce plans.
+#  quote: >
+#
   description: | # this will include new lines to allow paragraphs
     - I designed with my coworker the first auto-diagnosis algorithm for the wind turbines. This new algorithm was part of the preventive and corrective maintenance.
     - I analyze and did the analysis and error detection in control software for wind turbines.
