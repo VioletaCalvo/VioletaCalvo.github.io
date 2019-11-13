@@ -1,7 +1,7 @@
 - layout: top-middle
-  name: Euskal Herriko Unibertsitatea
+  name: MSc in Engineering in Embedded Systems
   dates: 2013 - 2014
-  qualification: Master of Science in Engineering in Embedded Systems
+  qualification: Euskal Herriko Unibertsitatea
   quote: >
     Best Student Award
   # description: | # this will include new lines to allow paragraphs
@@ -10,9 +10,9 @@
   #   I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
 
 - layout: top-middle
-  name: Universidad Pública de Navarra
+  name: (BSc) Telecommunications Technical Engineer - Sound & Image Specialist
   dates: 2009 - 2016
-  qualification: (BCs) Telecommunications Technical Engineer - Sound & Image Specialist
+  qualification: Universidad Pública de Navarra
   # quote: >
   #   Best Student Award
   # description: | # this will include new lines to allow paragraphs
@@ -21,9 +21,9 @@
   #   I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
 
 - layout: top-middle
-  name: Universidad Pública de Navarra
+  name: (BSc) Industrial Technical Engineer - Electrical Specialist
   dates: 1999 - 2003
-  qualification: (BCs) Industrial Technical Engineer - Electrical Specialist
+  qualification: Universidad Pública de Navarra
   quote: >
     Final Project with Honors
   # description: | # this will include new lines to allow paragraphs
@@ -32,9 +32,9 @@
   #   I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
 
 - layout: top-middle
-  name: Universidad de Leon
+  name: (BSc) Electrical Engineering Degree
   dates: 2014 - 2015
-  qualification: (BCs) Electrical Engineering Degree
+  qualification: Universidad de Leon
   quote: >
     New university degrees adaptation course
   # description: | # this will include new lines to allow paragraphs
