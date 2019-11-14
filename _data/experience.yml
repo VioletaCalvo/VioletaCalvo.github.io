@@ -1,30 +1,30 @@
 - layout: left
   company: BROZERLY
   # link: boringcompany.com
-  job_title: R & D Full Stack Engineer / Lead Full Stack Engineer
+  job_title: R&D Full Stack Engineer / Lead Full Stack Engineer
   dates: March 2015 - November 2018
   quote: >
-    I was the only full time developer for the first period of 10 months and then I became the only developer and web engineer in the company woking hand to hand with the CEO to publish the app and doing the graphic design.
+    I was the only full time developer for the first period of 10 months and then I became the only developer and web engineer in the company woking hand to hand with the CEO to publish apps and doing the graphic design.
   description: | # this will include new lines to allow paragraphs
-    - I was the only full time developer for the first period of 10 months and then I became the only developer and web engineer in the company woking hand to hand with the CEO to publish the app and doing the graphic design.
     - I was involved in all the phases of the software development.
     - From a prototype app created by the CTO, I followed the PWA development with Meteor framework implementing new app features as well as API integrations.
-    - I was responsible to publish the PWA version of the app.
-    - I was responsible to develop, built and publish the Android and iOS App versions using Meteor Cordova.
-    - I designed and built the back-office app. This back-office app included advanced payment methods and payment problem solving using Stripe as for manage refunds and .
-    - I translated from french to english and spanish the texts of the app and the site and the terms of service of the main app.
-    - I did some basic marketing tasks as video animations and some Social Media Marketing.
-    - I also did some Marketing tasks as the Social Media Marketing, some Youtube animations with PowToon, attending social events with flyers.
+    - I was responsible for publishing the PWA version of the app.
+    - I was responsible for developing, building and publishing the Android and iOS app versions using Meteor Cordova.
+    - I designed and built the back-office app. This back-office app included advanced payment methods and payment problem solving using Stripe API including managing refunds.
+    - I translated the app and site texts, as well as the terms of service of the main app, from french to english or spanish
+    - I did some basic marketing tasks including video animations and some Social Media Marketing.
+    - Some technologies I used are: Meteor, MongoDB, Javascript, Coffeescript, Material Design, Bootstrap, Jade, Git, Stripe API, Facebook API, Twitter API, Google API,  Jekyll, Stylus, Mandrill API, Heroku, AWS.
 
 - layout: left
   company: HOFF distribution
   link: https://youtu.be/u1Z9eipeNeU
   job_title: 3D Engineer (intern)
-  dates: November 2014
+  dates: November 2014 - December 2014
   quote: >
-   This experience allowed me to continue developing my artistic and design skills
+   This experience allowed me to continue developing my artistic and design skills.
   description: | # this will include new lines to allow paragraphs
-    - In order to strengthen my level of French to work I did an internship here and I made a 3D marketing animation and designed some molds in 3D for wooden skateboards.
+    - In order to strengthen my level of French to work I did an internship here and I made a 3D marketing animation and designed some 3D molds for wooden skateboards.
+
 
 - layout: left
   company: ULMA EMBEDDED SOLUTIONS
@@ -32,10 +32,11 @@
   job_title: IoT Embedded Systems Engineer (intern)
   dates: May 2014 - September 2014
   quote: >
-   I did this internship in order to do the final project of the Master in Embedded Systems Engineering
+   I did this internship in order to do the final project of the Master in Embedded Systems Engineering.
   description: | # this will include new lines to allow paragraphs
     - I implemented an IoT application to control and monitor industrial washing machines remotely.
     - I implemented both the device software IoT part and the desktop IoT application using Device Cloud by Digy as the web IoT platform.
+
 
 - layout: left
   company: BONOPARK
@@ -43,11 +44,12 @@
   job_title: Design and Development Engineer
   dates: September 2011 - March 2013
   quote: >
-   Even if my main mission was to design 3D mechanical parts, I also developed some software tools that helped all the mechanical engineering team to save time produce 2D plans. I developed this software using VBA for SolidWorks and it helped us to reduce the time from a day to about an hour each time we needed to produce plans.
+   Even if my main mission was to design 3D mechanical parts, I also developed some software tools that helped all the mechanical engineering team to save time producING 2D plans. I developed this software using VBA for SolidWorks and it helped us to reduce the time from a day to about an hour each time we needed to produce plans.
   description: | # this will include new lines to allow paragraphs
     - I defined the electronic part specifications and was responsible for the relationship with the electronic part colaborator company.
-    - I designed 3D mechanical parts, specifically the lock between the bike sharing base and the bike and produced prototypes. I found and manage the suppliers for the production of this part.
+    - I designed 3D mechanical parts, specifically the lock between the bike sharing base and the bike, and also produced prototypes. I found and manage the suppliers for the production of this part.
     - I tested and did some electronic maintenance of the system.
+    - We were a startup that won the public contest for the bike sharing system in San Sebastian.
 
 - layout: left
   company: MATIS HISPANIA for GAMESA
@@ -57,8 +59,9 @@
 #  quote: >
 #
   description: | # this will include new lines to allow paragraphs
-    - I designed with my coworker the first auto-diagnosis algorithm for the wind turbines. This new algorithm was part of the preventive and corrective maintenance.
-    - I analyze and did the analysis and error detection in control software for wind turbines.
+    - My coworker and me designed the first auto-diagnosis algorithm for the wind turbines. This new algorithm was part of the preventive and corrective maintenance.
+    - I analyzed and did the analysis and error detection in control software for wind turbines.
+
 
 - layout: left
   company: SCHNEIDER ELECTRIC
@@ -68,5 +71,5 @@
   #quote: >
   # Even if my main mission was to design 3D mechanical parts, I also developed some software tools that helped all the mechanical engineering team to save time produce 2D plans. I developed this software using VBA for SolidWorks and it helped us to reduce the time from a day to about an hour each time we needed to produce plans.
   description: | # this will include new lines to allow paragraphs
-    - I implement some advanced VBA applications for Ecell and Word in order to reduce the time managers spent calculating the most significative weekly statistics to analyze the performance of the mission of their departments. I helped each manager save 2 hours / week.
-    - As the responsible of some improvement process projects like 5S, Lean Manufacturing and 6 Sigma project I was able to develop my team management skills and I found that leading by te example was the better way.
+    - I implemented some advanced VBA applications for Excel and Word in order to reduce the time managers spent calculating the most significant weekly statistics to analyze the performance of the mission of their departments. I helped each manager save 2 hours / week.
+    - As the responsible of some improvement process projects like 5S, Lean Manufacturing and 6 Sigma projects I was able to develop my team management skills and I found that leading by the example was the better way.
