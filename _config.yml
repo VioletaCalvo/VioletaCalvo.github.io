@@ -1,6 +1,9 @@
 # Site
-# repository: VioletaCalvo/jekyll-forked-resume
+# repository: sproogen/resume-theme
 favicon: images/favicon.ico
+
+# Content configuration version
+version: 2
 
 # Personal info
 name: Violeta CALVO
@@ -9,7 +12,7 @@ email: violeta.itt@gmail.com
 # website: www.github.com/VioletaCalvo/jekyll-forked-resume
 
 # Dark Mode (true/false/never)
-darkmode: false
+darkmode: never
 
 # Social links
 # twitter_username: facespics
@@ -23,38 +26,37 @@ linkedin_username: violeta-calvo-ilundain-46b47932
 # googleplus_username: +jekyll
 
 # About Section
-about_title: About Me
+# about_title: About Me
 about_profile_image: images/VioletaCOLOR.jpg
 about_content: | # this will include new lines to allow paragraphs
   I’m an engineer with 5 year experience creating and building full-stack applications, participating in all the phases of software development. I’m currently a Backend engineer and was Meteor full-stack developer in my previous experience. _I have always thought, that what I can learn is more important than what I already know_. I’m looking for new opportunities, ideally working remotely in a startup.
   
-  I am most skilled in: <mark>Javascript</mark> and <mark>learning</mark>
+#I am most skilled in: <mark>Javascript</mark> and <mark>learning</mark>
 
 # Projects Section
 # projects_title: Projects
 
-- content:
+content:
   # Experience Section
   - title: Experience
     layout: list
     content:
       - layout: left
-        company: FLITDESK
+        title: FLITDESK
         link: https://www.flitdesk.com
-        job_title: Backend Engineer
-        dates: July 2020 - Now
+        sub_title: Backend Engineer
+        caption: July 2020 - Now
         quote: >
-        I'm part of the bakcend team and I'm glad to learn form my colleges exchanging, giving and receiving feedback, and taking decisions to migrate to a more modern stack and cleaner code.
+          I'm part of the backend team. I'm glad to learn form my colleges exchanging, giving and receiving feedback, and taking decisions to migrate to a more modern stack and cleaner code while improving our product with new features.
         description: | # this will include new lines to allow paragraphs
-        - As part of the Backend team in a I contributed to develop new features, new services, fix bugs and sharing my opinions with the team to take decisions about improving our app.
+          - As part of the Backend team in a I contributed to develop new features, new services, fix bugs and sharing my opinions with the team to take decisions about improving our app.
           - We are migrating from legacy code to a more modern and suitable framework and distributed architecture to fits our current customers needs, using better practices and clean code.
           - This experience is allowing me to faster develop my technical and team skills, giving and receiving feedback, and exchanging with my colleges.ll API.
 
       - layout: left
-        company: BROZERLY
-        # link: company.com
-        job_title: R&D Full Stack Engineer / Lead Full Stack Engineer
-        dates: March 2015 - November 2018
+        title: BROZERLY
+        sub_title: R&D Full Stack Engineer / Lead Full Stack Engineer
+        caption: March 2015 - November 2018
         quote: >
           I was the only full time developer for the first period of 10 months and then I became the only developer and web engineer in the company working hand to hand with the CEO to publish apps and doing the graphic design.
         description: | # this will include new lines to allow paragraphs
@@ -68,35 +70,35 @@ about_content: | # this will include new lines to allow paragraphs
           - Some technologies I used are: Meteor, MongoDB, Javascript, Coffeescript, Material Design, Bootstrap, Jade, Git, Stripe API, Facebook API, Twitter API, Google API,  Jekyll, Stylus, Mandrill API, Heroku, AWS.
 
       - layout: left
-        company: HOFF distribution
+        title: HOFF distribution
         link: https://youtu.be/u1Z9eipeNeU
-        job_title: 3D Engineer (intern)
-        dates: November 2014 - December 2014
+        sub_title: 3D Engineer (intern)
+        caption: November 2014 - December 2014
         quote: >
-        This experience allowed me to continue developing my artistic and design skills.
+          This experience allowed me to continue developing my artistic and design skills.
         description: | # this will include new lines to allow paragraphs
           - In order to strengthen my level of French to work I did an internship here and I made a 3D marketing animation and designed some 3D molds for wooden skateboards.
 
 
       - layout: left
-        company: ULMA EMBEDDED SOLUTIONS
+        title: ULMA EMBEDDED SOLUTIONS
         link: http://www.ulmaembedded.com
-        job_title: IoT Embedded Systems Engineer (intern)
-        dates: May 2014 - September 2014
+        sub_title: IoT Embedded Systems Engineer (intern)
+        caption: May 2014 - September 2014
         quote: >
-        I did this internship in order to do the final project of the Master in Embedded Systems Engineering.
+          I did this internship in order to do the final project of the Master in Embedded Systems Engineering.
         description: | # this will include new lines to allow paragraphs
           - I implemented an IoT application to control and monitor industrial washing machines remotely.
           - I implemented both the device software IoT part and the desktop IoT application using Device Cloud by Digy as the web IoT platform.
 
 
       - layout: left
-        company: BONOPARK
+        title: BONOPARK
         link: https://www.dbizi.com/about/station/
-        job_title: Design and Development Engineer
-        dates: September 2011 - March 2013
+        sub_title: Design and Development Engineer
+        caption: September 2011 - March 2013
         quote: >
-        Even if my main mission was to design 3D mechanical parts, I also developed some software tools that helped all the mechanical engineering team to save time producING 2D plans. I developed this software using VBA for SolidWorks and it helped us to reduce the time from a day to about an hour each time we needed to produce plans.
+          Even if my main mission was to design 3D mechanical parts, I also developed some software tools that helped all the mechanical engineering team to save time producING 2D plans. I developed this software using VBA for SolidWorks and it helped us to reduce the time from a day to about an hour each time we needed to produce plans.
         description: | # this will include new lines to allow paragraphs
           - I defined the electronic part specifications and was responsible for the relationship with the electronic part colaborator company.
           - I designed 3D mechanical parts, specifically the lock between the bike sharing base and the bike, and also produced prototypes. I found and manage the suppliers for the production of this part.
@@ -104,24 +106,20 @@ about_content: | # this will include new lines to allow paragraphs
           - We were a startup that won the public contest for the bike sharing system in San Sebastian.
 
       - layout: left
-        company: MATIS HISPANIA for GAMESA
+        title: MATIS HISPANIA for GAMESA
         link: https://www.siemensgamesa.com/
-        job_title: Control Software Support Engineer
-        dates: July 2007 - Jun 2009
-      #  quote: >
-      #
+        sub_title: Control Software Support Engineer
+        caption: July 2007 - Jun 2009
         description: | # this will include new lines to allow paragraphs
           - My coworker and me designed the first auto-diagnosis algorithm for the wind turbines. This new algorithm was part of the preventive and corrective maintenance.
           - I analyzed and did the analysis and error detection in control software for wind turbines.
 
 
       - layout: left
-        company: SCHNEIDER ELECTRIC
+        title: SCHNEIDER ELECTRIC
         link: https://www.se.com/
-        job_title: Continuous Improvement Process Engineer
-        dates: March 2004 - May 2007
-        #quote: >
-        # Even if my main mission was to design 3D mechanical parts, I also developed some software tools that helped all the mechanical engineering team to save time produce 2D plans. I developed this software using VBA for SolidWorks and it helped us to reduce the time from a day to about an hour each time we needed to produce plans.
+        sub_title: Continuous Improvement Process Engineer
+        caption: March 2004 - May 2007
         description: | # this will include new lines to allow paragraphs
           - I implemented some advanced VBA applications for Excel and Word in order to reduce the time managers spent calculating the most significant weekly statistics to analyze the performance of the mission of their departments. I helped each manager save 2 hours / week.
           - As the responsible of some improvement process projects like 5S, Lean Manufacturing and 6 Sigma projects I was able to develop my team management skills and I found that leading by the example was the better way.
@@ -131,49 +129,47 @@ about_content: | # this will include new lines to allow paragraphs
     layout: list
     content: 
       - layout: top-middle
-        name: MSc in Engineering in Embedded Systems
-        dates: 2013 - 2014
-        qualification: Euskal Herriko Unibertsitatea
+        title: MSc in Engineering in Embedded Systems
+        caption: 2013 - 2014
+        sub_title: Euskal Herriko Unibertsitatea
         quote: >
           Best Student Award
 
       - layout: top-middle
-        name: (BSc) Telecommunications Technical Engineer - Sound & Image Specialist
-        dates: 2009 - 2016
-        qualification: Universidad Pública de Navarra
+        title: (BSc) Telecommunications Technical Engineer - Sound & Image Specialist
+        caption: 2009 - 2016
+        sub_title: Universidad Pública de Navarra
 
       - layout: top-middle
-        name: (BSc) Industrial Technical Engineer - Electrical Specialist
-        dates: 1999 - 2003
-        qualification: Universidad Pública de Navarra
+        title: (BSc) Industrial Technical Engineer - Electrical Specialist
+        caption: 1999 - 2003
+        sub_title: Universidad Pública de Navarra
         quote: >
           Final Project with Honors
 
       - layout: top-middle
-        name: (BSc) Electrical Engineering Degree
-        dates: 2014 - 2015
-        qualification: Universidad de Leon
+        title: (BSc) Electrical Engineering Degree
+        caption: 2014 - 2015
+        sub_title: Universidad de Leon
         quote: >
           After a change in the law, new university degrees courses.
+  # More Section
+  - title: A Little More About Me
+    layout: text
+    content: |
+      Languages
+      - Spanish - native language
+      - English - B2 (TEOIC: 900 points)
+      - French - B2 (professional)
+      - Basque - B1
 
-
-
-# More Section
-more_title: A Little More About Me
-more_content: | # this will include new lines to allow paragraphs
-  Languages
-   - Spanish - native language
-   - English - B2 (TEOIC: 900 points)
-   - French - B2 (professional)
-   - Basque - B1
-
-  When I'm not creating software these are my favourites activities:
-   - Playing with my son
-   - Learning something new
-   - Enjoying nature
-   - Sewing some clothes for me or someone I love
-   - Creating something with wattercolos, lettering...
-   - Singing and playing guitar
+      When I'm not creating software these are my favourites activities:
+      - Playing with my son
+      - Learning something new
+      - Enjoying nature
+      - Sewing, Knitting some clothes for me or someone I love
+      - Experimenting with arts, currently with wattercolors and lettering
+      - Singing and playing guitar
 
 # Footer
 footer_show_references: true
