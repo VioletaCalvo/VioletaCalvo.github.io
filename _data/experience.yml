@@ -1,6 +1,18 @@
 - layout: left
+  company: FLITDESK
+  link: https://www.flitdesk.com
+  job_title: Backend Engineer
+  dates: July 2020 - Now
+  quote: >
+   I'm part of the bakcend team and I'm glad to learn form my colleges exchanging, giving and receiving feedback, and taking decisions to migrate to a more modern stack and cleaner code.
+  description: | # this will include new lines to allow paragraphs
+   - As part of the Backend team in a I contributed to develop new features, new services, fix bugs and sharing my opinions with the team to take decisions about improving our app.
+    - We are migrating from legacy code to a more modern and suitable framework and distributed architecture to fits our current customers needs, using better practices and clean code.
+    - This experience is allowing me to faster develop my technical and team skills, giving and receiving feedback, and exchanging with my colleges.ll API.
+
+- layout: left
   company: BROZERLY
-  # link: boringcompany.com
+  # link: company.com
   job_title: R&D Full Stack Engineer / Lead Full Stack Engineer
   dates: March 2015 - November 2018
   quote: >
