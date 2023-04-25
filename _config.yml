@@ -12,7 +12,7 @@ email: violeta.itt@gmail.com
 # website: www.github.com/VioletaCalvo/jekyll-forked-resume
 
 # Dark Mode (true/false/never)
-darkmode: never
+darkmode: true
 
 # Social links
 # twitter_username: facespics
@@ -29,11 +29,11 @@ linkedin_username: violeta-calvo-ilundain-46b47932
 # about_title: About Me
 about_profile_image: images/VioletaCOLOR.jpg
 about_content: | # this will include new lines to allow paragraphs
-  I'm an engineer with 5 year experience creating and building full-stack applications, participating in all the phases of software development. I'm currently a Backend engineer and was Meteor Full Stack engineer in my previous experience. _I have always thought, that what I can learn is more important than what I already know_.
+  I'm an engineer with 6 year experience creating and building full-stack applications, participating in all the phases of software development. I'm currently Tech Lead and worked as Full Stack Engineer and Backend Engineer. _I have always thought, that what I can learn is more important than what I already know_.
   
-  I'm looking for new opportunities as Full Stack Engineer role (or Backend role while sometimes contributing to the Frontend part) working remotely (no-onsite) on a startup of empowered team members. I love working in a small team where I can see the huge impact of my work, exchange ideas with my colleagues and learn from them, grow together.
+  I'm looking for new opportunities as Full Stack Engineer role (or Backend role while sometimes contributing to the Frontend part) working remotely (no-onsite) on a startup of empowered team members. I love working in a small team where I can see the impact of my work, exchange ideas with my colleagues and learn from them, grow together.
 
-  I really appreciate flexibility and asynchronous communication so I can adapt working hours to my life. I think it's possible to have asynchronous communication and still exchanging enough with our colleagues to help growing each other.
+  I really appreciate flexibility and asynchronous communication so I can adapt working hours to my life as the same time I can take care of my focus periods to do my best. I think it's possible to have asynchronous communication and still exchanging enough with our colleagues to help growing each other.
 #I am most skilled in: <mark>Javascript</mark> and <mark>learning</mark>
 
 # Projects Section
@@ -44,11 +44,27 @@ content:
   - title: Experience
     layout: list
     content:
+     - layout: left
+        title: GREENLY
+        link: https://www.greenly.earth
+        sub_title: Tech Lead
+        caption: August 2022 - Now
+        sub_title: Full Stack Engineer
+        caption: April 2022 - July 2022
+        quote: >
+          I'm currently a tech lead from August 2022. I'm glad coaching the team to grow and contributing to find solutions at a higher level than I did in my previous experiences.        description:  | # this will include new lines to allow paragraphs
+        description: | # this will include new lines to allow paragraphs
+          - As a Full Stack Engineer I contributed to develop and improve features and fix bugs using best practices and clean code.
+          - As Tech Lead I coach the team by leading 1:1s, giving technical feedback through PR reviews and also when designing the technical solution.
+          - This experience is allowing me to develop my technical skills by coaching and contributing in a higher level.
+          - We have freedom to choose our work methodology and we get inspiration from different known methodologies like scrum or shape up building a custom one to fit our needs.
+          - Some technologies I use are: Node.js, React, Express, TSOA, PostgreSQL, TypeORM.
+
       - layout: left
         title: FLITDESK
         link: https://www.flitdesk.com
         sub_title: Backend Engineer
-        caption: July 2020 - Now
+        caption: July 2020 - March 2022
         quote: >
           I'm part of the backend team. I'm glad to learn form my colleges exchanging, giving and receiving feedback, and taking decisions to migrate to a more modern stack and cleaner code while improving our product with new features.
         description: | # this will include new lines to allow paragraphs
