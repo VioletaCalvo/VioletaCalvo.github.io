@@ -12,7 +12,7 @@ email: violeta.itt@gmail.com
 # website: www.github.com/VioletaCalvo/jekyll-forked-resume
 
 # Dark Mode (true/false/never)
-darkmode: true
+darkmode: never
 
 # Social links
 # twitter_username: facespics
