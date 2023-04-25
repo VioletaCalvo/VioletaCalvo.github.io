@@ -45,20 +45,20 @@ content:
     layout: list
     content:
       - layout: left
-      title: GREENLY
-      link: https://www.greenly.earth
-      sub_title: Tech Lead
-      caption: August 2022 - Now
-      sub_title: Full Stack Engineer
-      caption: April 2022 - July 2022
-      quote: >
-        I'm currently a tech lead from August 2022. I'm glad coaching the team to grow and contributing to find solutions at a higher level than I did in my previous experiences.        description:  | # this will include new lines to allow paragraphs
-      description: | # this will include new lines to allow paragraphs
-        - As a Full Stack Engineer I contributed to develop and improve features and fix bugs using best practices and clean code.
-        - As Tech Lead I coach the team by leading 1:1s, giving technical feedback through PR reviews and also when designing the technical solution.
-        - This experience is allowing me to develop my technical skills by coaching and contributing in a higher level.
-        - We have freedom to choose our work methodology and we get inspiration from different known methodologies like scrum or shape up building a custom one to fit our needs.
-        - Some technologies I use are: Node.js, React, Express, TSOA, PostgreSQL, TypeORM.
+        title: GREENLY
+        link: https://www.greenly.earth
+        sub_title: Tech Lead
+        caption: August 2022 - Now
+        sub_title: Full Stack Engineer
+        caption: April 2022 - July 2022
+        quote: >
+          I'm currently a tech lead from August 2022. I'm glad coaching the team to grow and contributing to find solutions at a higher level than I did in my previous experiences.
+        description: | # this will include new lines to allow paragraphs
+          - As a Full Stack Engineer I contributed to develop and improve features and fix bugs using best practices and clean code.
+          - As Tech Lead I coach the team by leading 1:1s, giving technical feedback through PR reviews and also when designing the technical solution.
+          - This experience is allowing me to develop my technical skills by coaching and contributing in a higher level.
+          - We have freedom to choose our work methodology and we get inspiration from different known methodologies like scrum or shape up building a custom one to fit our needs.
+          - Some technologies I use are: Node.js, React, Express, TSOA, PostgreSQL, TypeORM.
 
       - layout: left
         title: FLITDESK
