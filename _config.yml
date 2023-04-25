@@ -47,10 +47,8 @@ content:
       - layout: left
         title: GREENLY
         link: https://www.greenly.earth
-        sub_title: Tech Lead
-        caption: August 2022 - Now
-        sub_title: Full Stack Engineer
-        caption: April 2022 - July 2022
+        sub_title: Tech Lead - Full Stack Engineer
+        caption: April 2022 - Now
         quote: >
           I'm currently a tech lead from August 2022. I'm glad coaching the team to grow and contributing to find solutions at a higher level than I did in my previous experiences.
         description: | # this will include new lines to allow paragraphs
