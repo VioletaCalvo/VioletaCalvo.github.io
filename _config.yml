@@ -56,7 +56,7 @@ content:
           - As Tech Lead I coach the team by leading 1:1s, giving technical feedback through PR reviews and also when designing the technical solution.
           - This experience is allowing me to develop my technical skills by coaching and contributing in a higher level.
           - We have freedom to choose our work methodology and we get inspiration from different known methodologies like scrum or shape up building a custom one to fit our needs.
-          - Some technologies I use are: Node.js, React, Express, TSOA, PostgreSQL, TypeORM.
+          - Some technologies I use are: Node.js, React, Express, TSOA, PostgreSQL, TypeORM, Heroku, AWS.
 
       - layout: left
         title: FLITDESK
@@ -64,14 +64,14 @@ content:
         sub_title: Backend Engineer
         caption: July 2020 - March 2022
         quote: >
-          I'm part of the backend team. I'm glad to learn form my colleges exchanging, giving and receiving feedback, and taking decisions to migrate to a more modern stack and cleaner code while improving our product with new features.
+          I was part of the backend team. I was glad to learn form my colleges exchanging, giving and receiving feedback, and taking decisions to migrate to a more modern stack and cleaner code while improving our product with new features.
         description: | # this will include new lines to allow paragraphs
           - As part of the Backend team in a I contributed to develop new features, new services, fix bugs and sharing my opinions with the team to take decisions about improving our app.
-          - We are migrating from legacy code to a more modern and suitable framework and distributed architecture to fits our current customers needs, using better practices and clean code.
-          - While trying to improve the existing code, as part of the team I also solve bugs and implement new features.
-          - This experience is allowing me to faster develop my technical and team skills, giving and receiving feedback, and exchanging with my colleges.
+          - We migrated from legacy code to a more modern and suitable framework and distributed architecture to fits our current customers needs, using better practices and clean code.
+          - While trying to improve the existing code, as part of the team I also solved bugs and implemented new features.
+          - This experience allowed me to faster develop my technical and team skills, giving and receiving feedback, and exchanging with my colleges.
           - We switched our management from SCRUM to a custom Shape Up in early 2021.
-          - Some technologies I use are: Node.js, NestJS, Next.js, Loopback, GraphQL, Javascript, Typescript, Stripe API, Google API, Outlook API, GCP, MongoDB.
+          - Some technologies I used were: Node.js, NestJS, Next.js, Loopback, GraphQL, Javascript, Typescript, Stripe API, Google API, Outlook API, GCP, MongoDB.
 
       - layout: left
         title: BROZERLY
