@@ -1,0 +1,27 @@
+<body>
+  <p id="experienceYears"></p>
+</body>
+<script>
+  const milisecondsToYears = 1000 * 60 * 60 * 24 * 365;
+
+  const brozerlyExperience = new Date('2018-11-30') - new Date('2015-03-01');
+  const flitdeskExperience = new Date('2022-03-04') - new Date('2020-07-14');
+  const fromGreenlyFristDayUpToNow = new Date() - new Date('2022-04-04');
+  const totalSoftwareExperience = brozerlyExperience + flitdeskExperience + fromGreenlyFristDayUpToNow;
+
+  const totalSoftwareExperienceYears = Math.floor(totalSoftwareExperience / milisecondsToYears);
+  const totalSoftwareExperienceRestMonths = Math.floor((totalSoftwareExperience % milisecondsToYears) / (milisecondsToYears / 12));
+
+
+  const euneaExperience = new Date('2007-05-30') - new Date('2004-03-01');
+  const gamesaExperience = new Date('2009-06-30') - new Date('2007-07-01');
+  const bonoparkExperience = new Date('2013-03-30') - new Date('2011-09-01');
+  const totalExperienceBeforeBrozerly = euneaExperience + gamesaExperience + bonoparkExperience;
+
+  const totalExperience = (totalExperienceBeforeBrozerly + totalSoftwareExperience)
+  const totalExperienceYears = Math.floor(totalExperience / milisecondsToYears);
+  const totalExperienceRestMonths = Math.floor((totalExperience % milisecondsToYears) / (milisecondsToYears / 12));
+
+  const experienceYearsText = `more than ${totalSoftwareExperienceYears} years as software engineer (more than ${totalExperienceText} years as engineer)`;
+  document.getElementById('experienceYears').innerHTML;
+</script>
