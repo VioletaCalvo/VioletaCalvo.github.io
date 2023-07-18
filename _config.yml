@@ -30,12 +30,12 @@ linkedin_username: violeta-calvo-ilundain-46b47932
 about_profile_image: images/VioletaCOLOR.jpg
 about_profile_image: images/Violeta_2022.jpg
 about_content: | # this will include new lines to allow paragraphs
-  I'm an engineer with more than 6 years as software engineer (more than 13 years as engineer in total) creating and building full-stack applications, participating in all the phases of software development. I'm currently Tech Lead and worked as Full Stack Engineer and Backend Engineer. _I have always thought, that what I can learn is more important than what I already know_.
+  I'm an engineer with more than 6 years as software engineer (more than 13 years as engineer in total) creating and building full-stack applications, participating in all the phases of software development. In my last experience I was Tech Lead and worked as Full Stack Engineer and Backend Engineer. _I have always thought, that what I can learn is more important than what I already know_.
   
-  I'm looking for new opportunities as Full Stack Engineer role (or Backend role while sometimes contributing to the Frontend part) working remotely (no-onsite) on a startup of empowered team members. I love working in a small team where I can see the impact of my work, exchange ideas with my colleagues and learn from them, grow together.
+  I'm looking for new opportunities as Full Stack Engineer role (or Backend role while sometimes contributing to the Frontend part) working remotely (no-onsite) on a startup of empowered team members. I love working in a small teams where I can see the impact of my work, exchange ideas with my colleagues and learn from each other, grow together.
 
-  I really appreciate flexibility and asynchronous communication so I can adapt working hours to my life as the same time I can take care of my focus periods to do my best. I think it's possible to have asynchronous communication and still exchanging enough with our colleagues to help growing each other.
-#I am most skilled in: <mark>Javascript</mark> and <mark>learning</mark>
+  I really appreciate flexibility and asynchronous communication so I can adapt working hours to my life as the same time I can take care of my focus periods to do my best. I think it's possible to have asynchronous communication and still exchanging enough with our colleagues to help growing each other. Written culture is key when we work remotely.
+# I am most skilled in: <mark>Javascript</mark> and <mark>learning</mark>
 
 # Projects Section
 # projects_title: Projects
@@ -51,13 +51,13 @@ content:
         sub_title: Tech Lead - Full Stack Engineer
         caption: April 2022 - Now
         quote: >
-          I'm currently a tech lead from August 2022. I'm glad coaching the team to grow and contributing to find solutions at a higher level than I did in my previous experiences.
+          I'm was tech lead from August 2022. I was glad coaching the team to grow and contributing to find solutions at a higher level than I did in my previous experiences.
         description: | # this will include new lines to allow paragraphs
           - As a Full Stack Engineer I contributed to develop and improve features and fix bugs using best practices and clean code.
-          - As Tech Lead I coach the team by leading 1:1s, giving technical feedback through PR reviews and also when designing the technical solution.
-          - This experience is allowing me to develop my technical skills by coaching and contributing in a higher level.
-          - We have freedom to choose our work methodology and we get inspiration from different known methodologies like scrum or shape up building a custom one to fit our needs.
-          - Some technologies I use are: Node.js, React, Express, TSOA, PostgreSQL, TypeORM, Heroku, AWS.
+          - As Tech Lead I coached the team by leading 1:1s, giving technical feedback through PR reviews and also when designing the technical solution.
+          - This experience allowed me to develop my technical skills by coaching and contributing in a higher level.
+          - We had freedom to choose our work methodology and we got inspiration from different known methodologies like scrum or shape up building a custom one to fit our needs.
+          - Some technologies I used were: Node.js, React, Express, TSOA, PostgreSQL, TypeORM, Heroku, AWS.
 
       - layout: left
         title: FLITDESK
@@ -184,12 +184,12 @@ content:
       - French - B2 (professional)
       - Basque - B1
 
-      When I'm not creating software these are my favourites activities:
+      When I'm not creating software these are my favorites activities:
       - Playing with my son
       - Learning something new
       - Enjoying nature
       - Sewing, Knitting some clothes for me or someone I love
-      - Experimenting with arts, currently with wattercolors and lettering
+      - Experimenting with arts, currently with watercolors and lettering
       - Singing and playing guitar
 
 # Footer

@@ -2,15 +2,17 @@
   <p id="experienceYears"></p>
 </body>
 <script>
-  const milisecondsToYears = 1000 * 60 * 60 * 24 * 365;
+  const millisecondsToYears = 1000 * 60 * 60 * 24 * 365;
 
+  
   const brozerlyExperience = new Date('2018-11-30') - new Date('2015-03-01');
   const flitdeskExperience = new Date('2022-03-04') - new Date('2020-07-14');
-  const fromGreenlyFristDayUpToNow = new Date() - new Date('2022-04-04');
-  const totalSoftwareExperience = brozerlyExperience + flitdeskExperience + fromGreenlyFristDayUpToNow;
+  const greenlyExperience = new Date('2022-04-04') - new Date('2023-06-27');
+  // const fromLastExperienceFirstDayUpToNow = new Date() - new Date('2022-04-04');
+  const totalSoftwareExperience = brozerlyExperience + flitdeskExperience + greenlyExperience;
 
-  const totalSoftwareExperienceYears = Math.floor(totalSoftwareExperience / milisecondsToYears);
-  const totalSoftwareExperienceRestMonths = Math.floor((totalSoftwareExperience % milisecondsToYears) / (milisecondsToYears / 12));
+  const totalSoftwareExperienceYears = Math.floor(totalSoftwareExperience / millisecondsToYears);
+  const totalSoftwareExperienceRestMonths = Math.floor((totalSoftwareExperience % millisecondsToYears) / (millisecondsToYears / 12));
 
 
   const euneaExperience = new Date('2007-05-30') - new Date('2004-03-01');
@@ -19,9 +21,9 @@
   const totalExperienceBeforeBrozerly = euneaExperience + gamesaExperience + bonoparkExperience;
 
   const totalExperience = (totalExperienceBeforeBrozerly + totalSoftwareExperience)
-  const totalExperienceYears = Math.floor(totalExperience / milisecondsToYears);
-  const totalExperienceRestMonths = Math.floor((totalExperience % milisecondsToYears) / (milisecondsToYears / 12));
+  const totalExperienceYears = Math.floor(totalExperience / millisecondsToYears);
+  const totalExperienceRestMonths = Math.floor((totalExperience % millisecondsToYears) / (millisecondsToYears / 12));
 
-  const experienceYearsText = `more than ${totalSoftwareExperienceYears} years as software engineer (more than ${totalExperienceYears} years as enginee in total)`;
+  const experienceYearsText = `more than ${totalSoftwareExperienceYears} years as software engineer (more than ${totalExperienceYears} years as engineer in total)`;
   document.getElementById('experienceYears').innerHTML = experienceYearsText;
 </script>
