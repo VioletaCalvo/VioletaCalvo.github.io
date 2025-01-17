@@ -4,26 +4,43 @@
 <script>
   const millisecondsToYears = 1000 * 60 * 60 * 24 * 365;
 
-  
-  const brozerlyExperience = new Date('2018-11-30') - new Date('2015-03-01');
-  const flitdeskExperience = new Date('2022-03-04') - new Date('2020-07-14');
-  const greenlyExperience = new Date('2022-04-04') - new Date('2023-06-27');
+  const brozerlyExperience = new Date("2018-11-30") - new Date("2015-03-01");
+  const flitdeskExperience = new Date("2022-03-04") - new Date("2020-07-14");
+  const greenlyExperience = new Date("2023-06-27") - new Date("2022-04-04");
+  const hibooExperience = new Date("2025-01-13") - new Date("2024-05-02");
   // const fromLastExperienceFirstDayUpToNow = new Date() - new Date('2022-04-04');
-  const totalSoftwareExperience = brozerlyExperience + flitdeskExperience + greenlyExperience;
+  const totalSoftwareExperience =
+    brozerlyExperience +
+    flitdeskExperience +
+    greenlyExperience +
+    hibooExperience;
 
-  const totalSoftwareExperienceYears = Math.floor(totalSoftwareExperience / millisecondsToYears);
-  const totalSoftwareExperienceRestMonths = Math.floor((totalSoftwareExperience % millisecondsToYears) / (millisecondsToYears / 12));
+  const totalSoftwareExperienceYears = Math.floor(
+    totalSoftwareExperience / millisecondsToYears
+  );
+  const totalSoftwareExperienceRestMonths = Math.floor(
+    (totalSoftwareExperience % millisecondsToYears) / (millisecondsToYears / 12)
+  );
 
+  const euneaExperience = new Date("2007-05-30") - new Date("2004-03-01");
+  const gamesaExperience = new Date("2009-06-30") - new Date("2007-07-01");
+  const bonoparkExperience = new Date("2013-03-30") - new Date("2011-09-01");
+  const totalExperienceBeforeBrozerly =
+    euneaExperience + gamesaExperience + bonoparkExperience;
 
-  const euneaExperience = new Date('2007-05-30') - new Date('2004-03-01');
-  const gamesaExperience = new Date('2009-06-30') - new Date('2007-07-01');
-  const bonoparkExperience = new Date('2013-03-30') - new Date('2011-09-01');
-  const totalExperienceBeforeBrozerly = euneaExperience + gamesaExperience + bonoparkExperience;
+  const totalExperienceBeforeBrozerlyYears = Math.floor(
+    totalExperienceBeforeBrozerly / millisecondsToYears
+  );
 
-  const totalExperience = (totalExperienceBeforeBrozerly + totalSoftwareExperience)
-  const totalExperienceYears = Math.floor(totalExperience / millisecondsToYears);
-  const totalExperienceRestMonths = Math.floor((totalExperience % millisecondsToYears) / (millisecondsToYears / 12));
+  const totalExperience =
+    totalExperienceBeforeBrozerly + totalSoftwareExperience;
+  const totalExperienceYears = Math.floor(
+    totalExperience / millisecondsToYears
+  );
+  const totalExperienceRestMonths = Math.floor(
+    (totalExperience % millisecondsToYears) / (millisecondsToYears / 12)
+  );
 
-  const experienceYearsText = `more than ${totalSoftwareExperienceYears} years as software engineer (more than ${totalExperienceYears} years as engineer in total)`;
-  document.getElementById('experienceYears').innerHTML = experienceYearsText;
+  const experienceYearsText = `more than ${totalSoftwareExperienceYears} years as software engineer plus more than ${totalExperienceBeforeBrozerlyYears} years as industrial engineer`;
+  document.getElementById("experienceYears").innerHTML = experienceYearsText;
 </script>
