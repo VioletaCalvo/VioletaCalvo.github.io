@@ -3,3 +3,249 @@
 ---
 
 @import 'modern-resume-theme';
+
+/* ============================================================
+   DISEÑO PERSONALIZADO — Violeta Calvo
+   Todo lo de aquí abajo es tuyo para tocar. Las variables de
+   :root son lo primero que debes cambiar cuando tengas los
+   colores/tipografía de tu marca personal.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700&display=swap');
+
+:root {
+  --accent: #146C64;       /* color principal de acento */
+  --accent-dark: #0F5049;  /* hover / variante oscura */
+  --accent-soft: #E4F1EF;  /* fondo suave para chips/iconos */
+  --bg: #F6F3EE;           /* fondo general de la página (ya no blanco puro) */
+  --card: #FFFFFF;         /* fondo de las tarjetas de contenido */
+  --text: #23262B;
+  --muted: #6B7280;
+  --radius: 18px;
+  --shadow: 0 16px 40px -20px rgba(20, 33, 30, 0.25);
+}
+
+/* Franja de color de marca arriba del todo */
+body::before {
+  content: "";
+  display: block;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+}
+
+html, body {
+  background: var(--bg);
+}
+
+body {
+  color: var(--text);
+}
+
+h1, h2, h4 {
+  font-family: 'Sora', Roboto, sans-serif;
+}
+
+h1 {
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover, a:focus, a:active {
+  color: var(--accent-dark);
+}
+
+/* ---- Cabecera como tarjeta ---- */
+.header-container {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem 2.5rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+ul.icons a {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+ul.icons a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ---- Cada sección como tarjeta ---- */
+.intro-container,
+.list-container,
+.text-container {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---- Títulos de sección (About Me / Experience / etc.) ---- */
+.intro-container h3,
+.list-container h3,
+.text-container h3 {
+  font-family: 'Sora', Roboto, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: none;
+  color: var(--text);
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.intro-container h3::after,
+.list-container h3::after,
+.text-container h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+/* ---- Foto de perfil (About Me, si la vuelves a usar ahí) ---- */
+.profile-img {
+  box-shadow: 0 0 0 6px var(--accent-soft), 0 10px 25px -10px rgba(20, 33, 30, 0.35);
+}
+
+/* ---- Foto junto al nombre, en la cabecera ---- */
+.header-name-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.header-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--accent-soft), 0 8px 20px -10px rgba(20, 33, 30, 0.35);
+}
+
+@media screen and (max-width: 767px) {
+  .header-name-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ---- Efecto "timeline" en Experience/Education ---- */
+.list-container .layout {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--accent-soft);
+  margin-top: 2rem !important;
+}
+
+.list-container .layout::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--card);
+}
+
+.list-container .layout-top-middle {
+  padding-left: 0;
+  border-left: none;
+}
+
+.list-container .layout-top-middle::before {
+  display: none;
+}
+
+.details h4 {
+  color: var(--text);
+  font-size: 1.6rem;
+}
+
+.details p {
+  color: var(--muted);
+}
+
+.details a.link {
+  color: var(--accent);
+}
+
+p.quote {
+  color: var(--muted);
+}
+
+.layout-left p.quote,
+.layout-right p.quote {
+  text-align: left;
+  border-left: 3px solid var(--accent-soft);
+  padding-left: 1.2rem;
+}
+
+.layout-top-middle p.quote {
+  text-align: center;
+}
+
+/* ---- Pie de página ---- */
+.footer-container p {
+  color: var(--muted);
+}
+
+/* ---- Ajustes en móvil ---- */
+@media screen and (max-width: 767px) {
+  .header-container,
+  .intro-container,
+  .list-container,
+  .text-container {
+    padding: 1.5rem;
+  }
+}
+
+/* ---- Al imprimir, sin sombras ni fondos de color ---- */
+@media print {
+  .header-container,
+  .intro-container,
+  .list-container,
+  .text-container {
+    box-shadow: none;
+    background: #fff;
+    padding: 0;
+  }
+
+  .list-container .layout,
+  .list-container .layout::before {
+    border-left: none;
+    padding-left: 0;
+    display: block;
+  }
+
+  .list-container .layout::before {
+    display: none;
+  }
+
+  body::before {
+    display: none;
+  }
+}

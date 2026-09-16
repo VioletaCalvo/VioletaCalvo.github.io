@@ -16,7 +16,7 @@ darkmode: never
 
 # Social links
 # twitter_username: facespics
-github_username:  VioletaCalvo
+github_username: VioletaCalvo
 # dribbble_username: jekyll
 # facebook_username: jekyll
 # flickr_username: jekyll
@@ -27,16 +27,14 @@ linkedin_username: violeta-calvo-ilundain-46b47932
 
 # About Section
 # about_title: About Me
-about_profile_image: images/VioletaCOLOR.jpg
-about_profile_image: images/Violeta_2022.jpg
+about_profile_image: images/Violeta_2026.jpg
 about_content: | # this will include new lines to allow paragraphs
-  I'm an engineer with more than 7 years as software engineer (more than 14 years as engineer in total) creating and building full-stack applications, participating in all the phases of software development. In my last experience I was Tech Lead and worked as Full Stack Engineer and Backend Engineer. _I have always thought, that what I can learn is more important than what I already know_.
-  
-  I'm looking for new opportunities as Full Stack Engineer role (or Backend role while sometimes contributing to the Frontend part) working remotely (no-onsite) on a startup of empowered team members. I love working in a small teams where I can see the impact of my work, exchange ideas with my colleagues and learn from each other, grow together.
+  I'm an engineer with more than 7 years as a software engineer (more than 14 years as an engineer in total) creating and building full-stack applications, participating in all phases of software development. In my last experience I was Tech Lead and worked as Full Stack Engineer and Backend Engineer. _I have always thought that what I can learn is more important than what I already know_.
 
-  I really appreciate flexibility and asynchronous communication so I can adapt working hours to my life as the same time I can take care of my focus periods to do my best. I think it's possible to have asynchronous communication and still exchanging enough with our colleagues to help growing each other. Written culture is key when we work remotely.
+  I'm currently working as a Technology Partner at SustraiLab, designing and building applications end to end. I'm also open to new Full Stack or Backend Engineer opportunities (sometimes contributing to the Frontend too), working remotely on a startup with an empowered, small team where I can see the impact of my work, exchange ideas with my colleagues and grow together.
+
+  I really appreciate flexibility and asynchronous communication so I can adapt my working hours to my life while still protecting focus time to do my best work. Written culture is key when working remotely, and I believe it's possible to stay async while still exchanging enough with colleagues to help each other grow.
 # I am most skilled in: <mark>Javascript</mark> and <mark>learning</mark>
-
 # Projects Section
 # projects_title: Projects
 
@@ -46,6 +44,16 @@ content:
     layout: list
     content:
       - layout: left
+        title: SustraiLab
+        # link: https://... # TODO: añade la web de SustraiLab si tiene
+        sub_title: Technology Partner
+        caption: 2025 - Present
+        quote: >
+          I'm currently a Technology Partner, designing and building applications end to end.
+        description: | # this will include new lines to allow paragraphs
+          - I turn product ideas into working digital products, covering product strategy, architecture, development and deployment. I build modern web applications and SaaS products with a strong focus on simplicity, automation and AI-assisted workflows.
+
+      - layout: left
         title: HIBOO
         link: https://www.hiboo.io
         sub_title: Senior Full Stack Engineer
@@ -53,10 +61,10 @@ content:
         quote: >
           I contributed in an experienced team with horizontal hierarchy.
         description: | # this will include new lines to allow paragraphs
-         - Backend migrated to a port and adapters Hexagonal Architecture.
-         - Custom Agile methodology inspired by Shape Up, Scrum and Marty Cagan's ideas.
-         - Horizontal hierarchy with a lot of autonomy and responsibility. Tech Lead role to participate on product trio was rotating.
-         - Main technologies: Typescript, Node.js, React, Express, PostgreSQL, GraphQL and REST.
+          - Backend migrated to a port and adapters Hexagonal Architecture.
+          - Custom Agile methodology inspired by Shape Up, Scrum and Marty Cagan's ideas.
+          - Horizontal hierarchy with a lot of autonomy and responsibility. Tech Lead role to participate on product trio was rotating.
+          - Main technologies: Typescript, Node.js, React, Express, PostgreSQL, GraphQL and REST.
 
       - layout: left
         title: GREENLY
@@ -64,7 +72,7 @@ content:
         sub_title: Tech Lead - Full Stack Engineer
         caption: April 2022 - June 2023
         quote: >
-          I'm was tech lead from August 2022. I was glad coaching the team to grow and contributing to find solutions at a higher level than I did in my previous experiences.
+          I was tech lead from August 2022. I was glad to coach the team to grow and to contribute to finding solutions at a higher level than I did in my previous experiences.
         description: | # this will include new lines to allow paragraphs
           - As a Full Stack Engineer I contributed to develop and improve features and fix bugs using best practices and clean code.
           - As Tech Lead I coached the team by leading 1:1s, giving technical feedback through PR reviews and also when designing the technical solution.
@@ -78,12 +86,12 @@ content:
         sub_title: Backend Engineer
         caption: July 2020 - March 2022
         quote: >
-          I was part of the backend team. I was glad to learn form my colleges exchanging, giving and receiving feedback, and taking decisions to migrate to a more modern stack and cleaner code while improving our product with new features.
+          I was part of the backend team. I was glad to learn from my colleagues by exchanging, giving and receiving feedback, and taking decisions to migrate to a more modern stack and cleaner code while improving our product with new features.
         description: | # this will include new lines to allow paragraphs
-          - As part of the Backend team in a I contributed to develop new features, new services, fix bugs and sharing my opinions with the team to take decisions about improving our app.
-          - We migrated from legacy code to a more modern and suitable framework and distributed architecture to fits our current customers needs, using better practices and clean code.
+          - As part of the Backend team, I contributed to developing new features and services, fixing bugs, and sharing my opinions with the team to help decide how to improve our app.
+          - We migrated from legacy code to a more modern and suitable framework and distributed architecture to fit our customers' needs, using better practices and clean code.
           - While trying to improve the existing code, as part of the team I also solved bugs and implemented new features.
-          - This experience allowed me to faster develop my technical and team skills, giving and receiving feedback, and exchanging with my colleges.
+          - This experience allowed me to develop my technical and team skills faster, giving and receiving feedback, and exchanging with my colleagues.
           - We switched our management from SCRUM to a custom Shape Up in early 2021.
           - Some technologies I used were: Node.js, NestJS, Next.js, Loopback, GraphQL, Javascript, Typescript, Stripe API, Google API, Outlook API, GCP, MongoDB.
 
@@ -113,7 +121,6 @@ content:
         description: | # this will include new lines to allow paragraphs
           - In order to strengthen my level of French to work I did an internship here and I made a 3D marketing animation and designed some 3D molds for wooden skateboards.
 
-
       - layout: left
         title: ULMA EMBEDDED SOLUTIONS
         link: http://www.ulmaembedded.com
@@ -125,17 +132,16 @@ content:
           - I implemented an IoT application to control and monitor industrial washing machines remotely.
           - I implemented both the device software IoT part and the desktop IoT application using Device Cloud by Digy as the web IoT platform.
 
-
       - layout: left
         title: BONOPARK
         link: https://www.dbizi.com/about/station/
         sub_title: Design and Development Engineer
         caption: September 2011 - March 2013
         quote: >
-          Even if my main mission was to design 3D mechanical parts, I also developed some software tools that helped all the mechanical engineering team to save time producING 2D plans. I developed this software using VBA for SolidWorks and it helped us to reduce the time from a day to about an hour each time we needed to produce plans.
+          Even if my main mission was to design 3D mechanical parts, I also developed some software tools that helped the whole mechanical engineering team save time producing 2D plans. I developed this software using VBA for SolidWorks, and it helped us reduce the time from a day to about an hour each time we needed to produce plans.
         description: | # this will include new lines to allow paragraphs
-          - I defined the electronic part specifications and was responsible for the relationship with the electronic part colaborator company.
-          - I designed 3D mechanical parts, specifically the lock between the bike sharing base and the bike, and also produced prototypes. I found and manage the suppliers for the production of this part.
+          - I defined the electronic part specifications and was responsible for the relationship with the electronic parts collaborator company.
+          - I designed 3D mechanical parts, specifically the lock between the bike sharing base and the bike, and also produced prototypes. I found and managed the suppliers for the production of this part.
           - I tested and did some electronic maintenance of the system.
           - We were a startup that won the public contest for the bike sharing system in San Sebastian.
 
@@ -148,7 +154,6 @@ content:
           - My coworker and me designed the first auto-diagnosis algorithm for the wind turbines. This new algorithm was part of the preventive and corrective maintenance.
           - I analyzed and did the analysis and error detection in control software for wind turbines.
 
-
       - layout: left
         title: SCHNEIDER ELECTRIC
         link: https://www.se.com/
@@ -157,11 +162,11 @@ content:
         description: | # this will include new lines to allow paragraphs
           - I implemented some advanced VBA applications for Excel and Word in order to reduce the time managers spent calculating the most significant weekly statistics to analyze the performance of the mission of their departments. I helped each manager save 2 hours / week.
           - As the responsible of some improvement process projects like 5S, Lean Manufacturing and 6 Sigma projects I was able to develop my team management skills and I found that leading by the example was the better way.
-  
+
   # Education Section
   - title: Education
     layout: list
-    content: 
+    content:
       - layout: top-middle
         title: MSc in Engineering in Embedded Systems
         caption: 2013 - 2014
@@ -193,16 +198,20 @@ content:
     content: |
       Languages
       - Spanish - native language
-      - English - B2 (TEOIC: 900 points)
+      - English - B2 (TOEIC: 900 points)
       - French - B2 (professional)
       - Basque - B1
 
-      When I'm not creating software these are my favorites activities:
+      When I'm not creating software, staying active is a priority for me — it keeps me healthy, focused and energized for my son and my work:
+      - Pole dance & acrobatics
+      - Scuba diving
+
+      I also enjoy:
       - Playing with my son
       - Learning something new
       - Enjoying nature
-      - Sewing, Knitting some clothes for me or someone I love
-      - Experimenting with arts, currently with watercolors and lettering
+      - Sewing and knitting, now and then
+      - Experimenting with arts, currently watercolors and lettering
       - Singing and playing guitar
 
 # Footer
@@ -216,4 +225,4 @@ sass:
   style: compressed
 
 plugins:
- - jekyll-seo-tag
+  - jekyll-seo-tag
