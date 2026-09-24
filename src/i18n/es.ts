@@ -36,7 +36,7 @@ export const es: Content = {
     photoAlt: 'Retrato de Violeta Calvo',
   },
   quote: {
-    text: 'Siempre estoy haciendo lo que no sé hacer, para aprender a hacerlo.',
+    text: 'Siempre estoy haciendo lo que no puedo hacer para poder aprender cómo hacerlo.',
     author: 'Pablo Picasso',
   },
   about: {
