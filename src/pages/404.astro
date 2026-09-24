@@ -1,0 +1,66 @@
+---
+// GitHub Pages serves this file with a 404 status for any unknown URL.
+// The browser picks the language from the path, counts down and then goes
+// back (same-site referrer) or to the home page of that language.
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import isotipo from '../assets/isotipo.png';
+import { homePath, langs } from '../data/cv';
+import { content } from '../i18n';
+
+const t = content.en.notFound;
+const strings = Object.fromEntries(
+  langs.map((l) => [l, { ...content[l].notFound, home: homePath[l] }]),
+);
+const SECONDS = 6;
+---
+<Base lang="en" title={t.title} noindex>
+  <main class="not-found">
+    <Image src={isotipo} alt="" width={76} height={96} densities={[1, 2]} class="not-found-mark" />
+    <h1 data-nf="heading">{t.heading}</h1>
+    <p data-nf="text">{t.text}</p>
+    <p class="not-found-status" role="status" aria-live="polite" data-nf-status></p>
+    <p class="not-found-count" aria-hidden="true" data-nf-count>{SECONDS}</p>
+    <div class="not-found-actions">
+      <a class="btn btn-primary" href="/" data-nf="goHome" data-nf-home>{t.goHome}</a>
+      <button class="btn btn-outline" type="button" data-nf="goBack" data-nf-back hidden>{t.goBack}</button>
+    </div>
+  </main>
+
+  <script is:inline define:vars={{ strings, SECONDS }}>
+    const lang = location.pathname.startsWith('/es/') ? 'es' : location.pathname.startsWith('/fr/') ? 'fr' : 'en';
+    const s = strings[lang];
+    document.documentElement.lang = lang;
+    document.title = s.title;
+    document.querySelectorAll('[data-nf]').forEach((el) => {
+      el.textContent = s[el.dataset.nf];
+    });
+    const home = document.querySelector('[data-nf-home]');
+    home.href = s.home;
+
+    let fromSite = false;
+    try {
+      fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin;
+    } catch {}
+    const canGoBack = fromSite && history.length > 1;
+    const back = document.querySelector('[data-nf-back]');
+    if (canGoBack) {
+      back.hidden = false;
+      back.addEventListener('click', () => history.back());
+    }
+
+    const go = () => (canGoBack ? history.back() : location.assign(s.home));
+    document.querySelector('[data-nf-status]').textContent = (canGoBack ? s.toBack : s.toHome).replace('{n}', SECONDS);
+
+    let left = SECONDS;
+    const count = document.querySelector('[data-nf-count]');
+    const timer = setInterval(() => {
+      left -= 1;
+      count.textContent = String(Math.max(left, 0));
+      if (left <= 0) {
+        clearInterval(timer);
+        go();
+      }
+    }, 1000);
+  </script>
+</Base>

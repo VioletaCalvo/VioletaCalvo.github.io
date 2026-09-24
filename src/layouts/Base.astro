@@ -1,0 +1,53 @@
+---
+import '@fontsource-variable/manrope/wght.css';
+import '@fontsource-variable/dm-sans/opsz.css';
+import '@fontsource-variable/dm-sans/opsz-italic.css';
+import '../styles/global.css';
+import { homePath, langs, type Lang } from '../data/cv';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+  /** Add hreflang alternates between the three home pages. */
+  alternates?: boolean;
+  noindex?: boolean;
+}
+
+const { lang, title, description, alternates = false, noindex = false } = Astro.props;
+const site = Astro.site ?? new URL('https://violetacalvo.github.io');
+const canonical = new URL(Astro.url.pathname, site);
+const ogLocale: Record<Lang, string> = { en: 'en_US', es: 'es_ES', fr: 'fr_FR' };
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="theme-color" content="#FCF9F0" />
+    {!noindex && <link rel="canonical" href={canonical} />}
+    {
+      alternates && (
+        <>
+          {langs.map((l) => (
+            <link rel="alternate" hreflang={l} href={new URL(homePath[l], site)} />
+          ))}
+          <link rel="alternate" hreflang="x-default" href={new URL(homePath.en, site)} />
+        </>
+      )
+    }
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={ogLocale[lang]} />
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

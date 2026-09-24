@@ -1,0 +1,397 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Icon from './Icon.astro';
+import LangSwitch from './LangSwitch.astro';
+import photo from '../assets/violeta.jpg';
+import isotipo from '../assets/isotipo.png';
+import rootsFlower from '../assets/roots-flower.png';
+import {
+  contact,
+  cvPdfPath,
+  earlier,
+  experienceYears,
+  monthsBetween,
+  monthYear,
+  timeline,
+  year,
+  type Lang,
+} from '../data/cv';
+import { content, fillYears, yearsHtml } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = content[lang];
+const years = experienceYears();
+const html = (s: string) => yearsHtml(s, years);
+
+const range = (start: string, end: string | null) =>
+  `${monthYear(start, lang)} — ${end ? monthYear(end, lang) : t.experience.present}`;
+const newTab = `(${t.a11y.newTab})`;
+
+const values = [
+  { icon: 'clock', ...t.about.values[0] },
+  { icon: 'people', ...t.about.values[1] },
+  { icon: 'doc', ...t.about.values[2] },
+  { icon: 'sprout', ...t.about.values[3] },
+] as const;
+
+const socials = [
+  { name: 'GitHub', icon: 'github', url: contact.github.url, handle: contact.github.handle },
+  { name: 'LinkedIn', icon: 'linkedin', url: contact.linkedin.url, handle: contact.linkedin.handle },
+  { name: 'Instagram', icon: 'instagram', url: contact.instagram.url, handle: contact.instagram.handle },
+] as const;
+
+const navItems = [
+  { href: '#about', label: t.nav.about },
+  { href: '#experience', label: t.nav.experience },
+  { href: '#roots', label: t.nav.roots },
+  { href: '#education', label: t.nav.education },
+  { href: '#beyond', label: t.nav.beyond },
+];
+
+const nodeColors = ['#7E5A9B', '#7FB7B4', '#8FAF9B'];
+---
+<Base lang={lang} title={t.meta.title} description={fillYears(t.meta.description, years)} alternates>
+  <a class="skip-link" href="#main">{t.a11y.skip}</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <Image src={isotipo} alt="" width={38} height={48} densities={[1, 2]} class="brand-mark" />
+        <span class="brand-text">
+          <span class="brand-name">Violeta Calvo</span>
+          <span class="brand-tagline">{t.nav.tagline}</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label={t.a11y.mainNav} data-open="false">
+        <ul class="nav-links">
+          {navItems.map((item) => (
+            <li><a class="nav-link" href={item.href}>{item.label}</a></li>
+          ))}
+          <li class="nav-contact"><a class="nav-link" href="#contact">{t.nav.contact}</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <LangSwitch lang={lang} label={t.a11y.language} />
+        <a class="btn btn-primary btn-sm header-cta" href="#contact">{t.nav.contact}</a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label={t.a11y.openMenu}
+          data-open-label={t.a11y.openMenu}
+          data-close-label={t.a11y.closeMenu}
+        >
+          <span class="menu-icon-open"><Icon name="menu" /></span>
+          <span class="menu-icon-close"><Icon name="close" /></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="top" class="container hero">
+      <div class="hero-text">
+        <h1 class="hero-name">Violeta Calvo</h1>
+        <p class="hero-role">{t.hero.role}</p>
+        <p class="hero-lead" set:html={html(t.hero.lead)} />
+        <div class="hero-actions">
+          <a class="btn btn-primary" href={`mailto:${contact.email}`}><Icon name="mail" size={18} />{t.hero.getInTouch}</a>
+          <a class="btn btn-outline" href="#experience">{t.hero.viewExperience}</a>
+          <a class="btn btn-ghost" href={cvPdfPath(lang)} download><Icon name="download" size={18} />{t.hero.downloadCv}</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <svg class="hero-ring" viewBox="0 0 520 520" fill="none" aria-hidden="true">
+          <circle cx="260" cy="260" r="248" stroke="#C8B6DD" stroke-width="1.2" stroke-dasharray="2 8" />
+          <g stroke-width="1.4" stroke-linecap="round">
+            <path d="M260 12 L260 0" stroke="#8FAF9B" />
+            <path d="M68 104 L34 104 L17 87" stroke="#7FB7B4" />
+            <path d="M468 130 L503 130" stroke="#C8B6DD" />
+            <path d="M52 364 L21 364 L21 400" stroke="#C8B6DD" />
+            <path d="M451 407 L485 407 L503 424" stroke="#8FAF9B" />
+            <path d="M260 508 L260 520" stroke="#7FB7B4" />
+          </g>
+          <circle cx="68" cy="104" r="5" fill="#FCF9F0" stroke="#7FB7B4" stroke-width="1.6" />
+          <circle cx="468" cy="130" r="5" fill="#7E5A9B" />
+          <circle cx="52" cy="364" r="5" fill="#FCF9F0" stroke="#C8B6DD" stroke-width="1.6" />
+          <circle cx="451" cy="407" r="5" fill="#8FAF9B" />
+          <circle cx="260" cy="12" r="4.5" fill="#FCF9F0" stroke="#8FAF9B" stroke-width="1.6" />
+          <circle cx="260" cy="508" r="4.5" fill="#7FB7B4" />
+        </svg>
+        <div class="hero-photo">
+          <Image src={photo} alt={t.hero.photoAlt} widths={[320, 480, 640, 840]} sizes="(max-width: 960px) 250px, 420px" loading="eager" fetchpriority="high" />
+        </div>
+        <div class="currently">
+          <Image src={isotipo} alt="" width={30} height={38} densities={[1, 2]} />
+          <span class="currently-text">
+            <span class="currently-label">{t.hero.currently}</span>
+            <span class="currently-role">{t.hero.currentRole}</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote-band">
+      <svg class="quote-mark" width="40" height="32" viewBox="0 0 40 32" aria-hidden="true">
+        <path d="M2 30V18C2 9 7 3 16 2v6c-4 1-6 4-6 8h6v14H2zm22 0V18c0-9 5-15 14-16v6c-4 1-6 4-6 8h6v14H24z" fill="#C8B6DD" />
+      </svg>
+      <figure>
+        <blockquote><p>{t.quote.text}</p></blockquote>
+        <figcaption>— {t.quote.author}</figcaption>
+      </figure>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="container section about">
+      <div class="section-head">
+        <p class="eyebrow">{t.about.eyebrow}</p>
+        <h2 class="about-heading">{t.about.heading}</h2>
+      </div>
+      <div class="about-body">
+        <div class="about-text">
+          {t.about.paragraphs.map((p) => <p set:html={html(p)} />)}
+        </div>
+        <ul class="values">
+          {values.map((v) => (
+            <li class="value">
+              <span class="value-icon"><Icon name={v.icon} /></span>
+              <span>
+                <span class="value-title">{v.title}</span>
+                <span class="value-text">{v.text}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="container section section-rule">
+      <div class="section-head">
+        <p class="eyebrow">{t.experience.eyebrow}</p>
+        <h2>{t.experience.heading}</h2>
+      </div>
+
+      <ol class="timeline">
+        {timeline.map((item) => {
+          if (item.kind === 'break') {
+            return (
+              <li class="tl-item tl-break">
+                <span class="tl-node tl-node-break" aria-hidden="true" />
+                <p class="tl-date">{range(item.start, item.end)}</p>
+                <p class="tl-break-text">
+                  <span class="tl-break-date">{range(item.start, item.end)}</span>
+                  <strong>{t.experience.careerBreak}</strong>
+                  <em> · {t.experience.breaks[item.id]}</em>
+                </p>
+              </li>
+            );
+          }
+          const job = t.experience.jobs[item.id];
+          const isCurrent = item.end === null;
+          const dates = isCurrent ? `${year(item.start)} — ${t.experience.present}` : range(item.start, item.end);
+          const duration = isCurrent ? null : t.experience.duration(monthsBetween(item));
+          return (
+            <li class:list={['tl-item', { 'tl-current': isCurrent }]}>
+              <span class="tl-node" aria-hidden="true" />
+              <p class="tl-date">
+                <span class="tl-range">{dates}</span>
+                {duration && <span class="tl-duration">{duration}</span>}
+              </p>
+              <article class:list={['job', { 'job-current': isCurrent }]}>
+                <p class="job-date">
+                  <span>{dates}</span>
+                  {duration && <span class="tl-duration">{duration}</span>}
+                </p>
+                <header class="job-head">
+                  <div>
+                    <h3 class="job-company">
+                      {item.company}
+                      {isCurrent && <span class="badge">{t.experience.current}</span>}
+                    </h3>
+                    <p class="job-role">{job.role}</p>
+                  </div>
+                  {item.url && (
+                    <a class="job-link" href={item.url} target="_blank" rel="noopener">
+                      {new URL(item.url).hostname.replace('www.', '')}
+                      <Icon name="external" size={14} />
+                      <span class="sr-only">{newTab}</span>
+                    </a>
+                  )}
+                </header>
+                <p class="job-intro">{job.intro}</p>
+                {job.bullets.length > 0 && (
+                  <ul class="bullets">
+                    {job.bullets.map((b) => <li>{b}</li>)}
+                  </ul>
+                )}
+                <ul class="chips">
+                  {(job.tags ?? item.tech).map((c) => <li class="chip">{c}</li>)}
+                </ul>
+              </article>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+
+    <!-- Roots -->
+    <section id="roots" class="container section section-rule roots">
+      <div class="roots-intro">
+        <Image src={rootsFlower} alt="" width={300} height={430} format="png" class="roots-flower" />
+        <p class="eyebrow">{t.roots.eyebrow}</p>
+        <h2>{t.roots.heading}</h2>
+        <p class="roots-text">{t.roots.text}</p>
+      </div>
+      <ol class="roots-list">
+        {earlier.map((e) => {
+          const s = year(e.start);
+          const f = e.end ? year(e.end) : s;
+          return (
+            <li class="roots-item">
+              <span class="roots-years">{s === f ? s : `${s} — ${f}`}</span>
+              <div>
+                <p class="roots-title">
+                  {e.url ? (
+                    <a href={e.url} target="_blank" rel="noopener">{e.company}<span class="sr-only"> {newTab}</span></a>
+                  ) : (
+                    e.company
+                  )}
+                  <span class="roots-role">{t.roots.items[e.id].role}</span>
+                </p>
+                <p class="roots-desc">{t.roots.items[e.id].text}</p>
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="container section section-rule">
+      <div class="section-head">
+        <p class="eyebrow">{t.education.eyebrow}</p>
+        <h2>{t.education.heading}</h2>
+      </div>
+      <ul class="edu-grid">
+        {t.education.items.map((d) => (
+          <li class="edu-card">
+            <span class="edu-years">{d.years}</span>
+            <h3>{d.title}</h3>
+            <p class="edu-school">{d.school}</p>
+            {d.note && <p class="edu-note">{d.note}</p>}
+            {d.award && <span class="award"><Icon name="award" size={15} />{d.award}</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Beyond work -->
+    <section id="beyond" class="container beyond-wrap">
+      <div class="beyond">
+        <div class="beyond-col">
+          <p class="eyebrow eyebrow-violet">{t.beyond.eyebrow}</p>
+          <h2>{t.beyond.languagesTitle}</h2>
+          <dl class="languages">
+            {t.beyond.languages.map((l) => (
+              <div><dt>{l.name}</dt><dd>{l.level}</dd></div>
+            ))}
+          </dl>
+        </div>
+        <div class="beyond-col beyond-right">
+          <div class="beyond-block">
+            <h3>{t.beyond.activeTitle}</h3>
+            <p>{t.beyond.activeText}</p>
+            <ul class="pills">
+              {t.beyond.active.map((a, i) => <li class="pill"><span class="dot" style={`background:${nodeColors[i % 2]}`} />{a}</li>)}
+            </ul>
+          </div>
+          <div class="beyond-block">
+            <h3>{t.beyond.communityTitle}</h3>
+            <p>{t.beyond.communityText}</p>
+          </div>
+          <div class="beyond-block">
+            <h3>{t.beyond.enjoyTitle}</h3>
+            <ul class="pills">
+              {t.beyond.enjoy.map((a) => <li class="pill"><span class="dot" style="background:#8FAF9B" />{a}</li>)}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-main">
+        <p class="eyebrow eyebrow-light">{t.contact.eyebrow}</p>
+        <h2>{t.contact.heading}</h2>
+        <p class="footer-text">{t.contact.text}</p>
+        <a class="btn btn-lavender" href={`mailto:${contact.email}`}><Icon name="mail" size={18} />{contact.email}</a>
+      </div>
+      <ul class="socials">
+        {socials.map((s) => (
+          <li>
+            <a href={s.url} target="_blank" rel="noopener">
+              <Icon name={s.icon} size={22} />
+              <span class="social-name">{s.name}</span>
+              <span class="social-handle">{s.handle}</span>
+              <Icon name="external" size={16} />
+              <span class="sr-only">{newTab}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© {new Date().getFullYear()} Violeta Calvo</span>
+        <span class="signature"><strong>Sustrai Studio</strong><em>by Violeta Calvo</em></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    import { experienceYears } from '../data/cv';
+
+    // Keep the years of experience current between deploys.
+    const years = experienceYears();
+    document.querySelectorAll<HTMLElement>('[data-years]').forEach((el) => {
+      const key = el.dataset.years as keyof typeof years;
+      if (key in years) el.textContent = String(years[key]);
+    });
+
+    // Mobile menu.
+    const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+    const nav = document.getElementById('main-nav');
+    if (toggle && nav) {
+      const setOpen = (open: boolean) => {
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', (open ? toggle.dataset.closeLabel : toggle.dataset.openLabel) ?? '');
+        nav.dataset.open = String(open);
+      };
+      toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+      nav.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).closest('a')) setOpen(false);
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+          setOpen(false);
+          toggle.focus();
+        }
+      });
+    }
+  </script>
+</Base>
