@@ -1,0 +1,307 @@
+---
+// One-page A4 CV. scripts/build-pdfs.mjs prints each language to
+// /cv/violeta-calvo-cv-<lang>.pdf after the build.
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import photo from '../../assets/violeta.jpg';
+import { contact, experienceYears, jobs, langs, type Lang } from '../../data/cv';
+import { content, fillYears } from '../../i18n';
+
+export function getStaticPaths() {
+  return langs.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = content[lang];
+const years = experienceYears();
+
+const pad = (n: number) => String(n).padStart(2, '0');
+const mmYYYY = (iso: string) => {
+  const d = new Date(iso);
+  return `${pad(d.getUTCMonth() + 1)}/${d.getUTCFullYear()}`;
+};
+const dates = (start: string, end: string | null) =>
+  end ? `${mmYYYY(start)} – ${mmYYYY(end)}` : `${start.slice(0, 4)} – ${t.experience.present}`;
+---
+<Base lang={lang} title={`${t.cv.title} (${lang.toUpperCase()})`} noindex>
+  <div class="page" data-cv-page>
+    <aside class="side">
+      <div class="photo">
+        <Image src={photo} alt="Violeta Calvo" widths={[240]} sizes="116px" />
+      </div>
+
+      <section>
+        <h2>{t.cv.contact}</h2>
+        <ul class="plain contact">
+          <li><a href={`mailto:${contact.email}`}>{contact.email}</a></li>
+          <li><a href={contact.website}>violetacalvo.github.io</a></li>
+          <li><a href={contact.linkedin.url}>LinkedIn · Violeta Calvo</a></li>
+          <li><a href={contact.github.url}>github.com/{contact.github.handle}</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>{t.cv.skills}</h2>
+        <ul class="plain skills">{t.cv.skillList.map((s) => <li>{s}</li>)}</ul>
+      </section>
+
+      <section>
+        <h2>{t.cv.languages}</h2>
+        <dl class="langs">
+          {t.beyond.languages.map((l) => (
+            <div><dt>{l.name}</dt><dd>{l.level}</dd></div>
+          ))}
+        </dl>
+      </section>
+
+      <section>
+        <h2>{t.cv.education}</h2>
+        <ul class="plain edu">
+          {t.cv.educationItems.map((e) => (
+            <li>
+              <p class="edu-title">{e.title}</p>
+              <p class="edu-meta">{e.meta}</p>
+              {e.award && <p class="edu-award">{e.award}</p>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </aside>
+
+    <main class="main">
+      <header>
+        <h1>Violeta Calvo</h1>
+        <p class="role">{t.cv.role}</p>
+        <p class="profile">{fillYears(t.cv.profile, years)}</p>
+      </header>
+
+      <section>
+        <h2 class="rule">{t.cv.experience}</h2>
+        <ul class="plain jobs">
+          {jobs.map((j) => (
+            <li>
+              <div class="line">
+                <p class="title"><strong>{j.company}</strong><em> · {t.experience.jobs[j.id].role.replace('R&D Full Stack Engineer → ', '')}</em></p>
+                <span class="when">{dates(j.start, j.end)}</span>
+              </div>
+              <p class="desc">{t.cv.jobs[j.id]}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="rule">{t.cv.earlierTitle}</h2>
+        <ul class="plain earlier">
+          {t.cv.earlier.map((e) => (
+            <li class="line">
+              <p class="title small"><strong>{e.company}</strong><em> · {e.role}</em></p>
+              <span class="when">{e.years}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="rule">{t.cv.beyondTitle}</h2>
+        <p class="desc">{t.cv.beyond}</p>
+      </section>
+    </main>
+  </div>
+</Base>
+
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  :global(body) {
+    background: #fff;
+  }
+  .page {
+    width: 794px;
+    height: 1123px;
+    display: grid;
+    grid-template-columns: 244px minmax(0, 1fr);
+    overflow: hidden;
+    background: #fff;
+    color: #242826;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  p,
+  h1,
+  h2 {
+    margin: 0;
+  }
+  a {
+    color: #242826;
+    text-decoration: none;
+  }
+  .plain {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  h2 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #5e4078;
+    margin-bottom: 8px;
+  }
+  .side {
+    background: #f3eef8;
+    padding: 44px 24px 40px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .photo {
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f1eaf8;
+    box-shadow: 0 0 0 5px #fff;
+  }
+  .photo :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 25%;
+    mix-blend-mode: multiply;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12.5px;
+  }
+  .langs {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12.5px;
+  }
+  .langs div {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .langs dt {
+    font-weight: 600;
+  }
+  .langs dd {
+    margin: 0;
+    color: #4f544f;
+    text-align: right;
+  }
+  .edu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .edu-title {
+    font-size: 12.5px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  .edu-meta {
+    font-size: 12px;
+    color: #4f544f;
+  }
+  .edu-award {
+    font-size: 12px;
+    font-style: italic;
+    color: #6a4a86;
+  }
+  .main {
+    padding: 48px 44px 40px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: 38px;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: #1d3a31;
+  }
+  .role {
+    font-size: 16px;
+    font-style: italic;
+    color: #6a4a86;
+  }
+  .profile {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #33382f;
+    text-wrap: pretty;
+  }
+  .rule {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #dcd2e8;
+    margin-bottom: 12px;
+  }
+  .jobs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .earlier {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .title {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .title.small {
+    font-size: 12.5px;
+  }
+  .title strong {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: #1d3a31;
+  }
+  .title em {
+    color: #6a4a86;
+  }
+  .when {
+    flex-shrink: 0;
+    font-size: 12px;
+    color: #4f544f;
+  }
+  .desc {
+    margin-top: 3px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #33382f;
+    text-wrap: pretty;
+  }
+</style>
