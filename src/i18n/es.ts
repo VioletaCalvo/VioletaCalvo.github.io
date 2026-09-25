@@ -120,7 +120,7 @@ export const es: Content = {
   roots: {
     eyebrow: 'Raíces · 2004 — 2014',
     heading: 'Antes, diez años de ingeniería industrial',
-    text: 'De los aerogeneradores a los anclajes de bicicletas y el IoT: los años de ingeniería antes del software.',
+    text: 'De los aerogeneradores a los anclajes de bicicletas y el IoT: los años de ingeniería antes del software, con una patente concedida.',
     items: {
       ulma: {
         role: 'Ingeniera de sistemas embebidos IoT (prácticas)',
@@ -143,6 +143,7 @@ export const es: Content = {
         text: 'Lideré proyectos de 5S, Lean Manufacturing y 6 Sigma. Mis herramientas VBA ahorraban 2 horas a la semana a cada responsable.',
       },
     },
+    patent: { label: 'Coinventora · Patente ES2472445', title: 'Sistema de anclaje y recarga para bicicletas eléctricas de alquiler', url: 'https://patents.google.com/patent/ES2472445B1/es' },
   },
   education: {
     eyebrow: 'Formación',

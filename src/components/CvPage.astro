@@ -271,6 +271,17 @@ const nodeColors = ['#7E5A9B', '#7FB7B4', '#8FAF9B'];
                   <span class="roots-role">{t.roots.items[e.id].role}</span>
                 </p>
                 <p class="roots-desc">{t.roots.items[e.id].text}</p>
+                {e.id === 'bonopark' && (
+                  <a class="patent" href={t.roots.patent.url} target="_blank" rel="noopener">
+                    <Icon name="award" size={18} />
+                    <span class="patent-text">
+                      <span class="patent-label">{t.roots.patent.label}</span>
+                      <span class="patent-title">{t.roots.patent.title}</span>
+                    </span>
+                    <Icon name="external" size={14} />
+                    <span class="sr-only">{newTab}</span>
+                  </a>
+                )}
               </div>
             </li>
           );

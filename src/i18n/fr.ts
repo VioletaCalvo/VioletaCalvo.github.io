@@ -120,7 +120,7 @@ export const fr: Content = {
   roots: {
     eyebrow: 'Racines · 2004 — 2014',
     heading: 'D’abord, dix ans d’ingénierie industrielle',
-    text: 'Des éoliennes aux ancrages de vélos et à l’IoT : mes années d’ingénierie avant le logiciel.',
+    text: 'Des éoliennes aux ancrages de vélos et à l’IoT : mes années d’ingénierie avant le logiciel, dont un brevet délivré.',
     items: {
       ulma: {
         role: 'Ingénieure systèmes embarqués IoT (stage)',
@@ -143,6 +143,7 @@ export const fr: Content = {
         text: 'Pilotage de projets 5S, Lean Manufacturing et 6 Sigma. Mes outils VBA faisaient gagner 2 heures par semaine à chaque manager.',
       },
     },
+    patent: { label: 'Co-inventrice · Brevet EP2955092', title: 'Système d’ancrage et de recharge pour vélos électriques de location', url: 'https://patents.google.com/patent/EP2955092B1/fr' },
   },
   education: {
     eyebrow: 'Formation',

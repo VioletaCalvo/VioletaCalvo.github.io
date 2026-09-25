@@ -100,6 +100,7 @@ const dates = (start: string, end: string | null) =>
             </li>
           ))}
         </ul>
+        <a class="cv-patent" href={t.roots.patent.url}><strong>{t.roots.patent.label}</strong> · {t.roots.patent.title}</a>
       </section>
 
       <section>
@@ -296,6 +297,20 @@ const dates = (start: string, end: string | null) =>
     flex-shrink: 0;
     font-size: 12px;
     color: #4f544f;
+  }
+  .cv-patent {
+    display: block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: #f3eef8;
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: #3e2a55;
+  }
+  .cv-patent strong {
+    font-weight: 700;
+    color: #5e4078;
   }
   .desc {
     margin-top: 3px;
