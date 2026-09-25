@@ -43,7 +43,7 @@ export const fr: Content = {
     eyebrow: 'À propos',
     heading: 'Ce que je peux apprendre compte plus que ce que je sais déjà.',
     paragraphs: [
-      'Je suis ingénieure depuis plus de {total} ans, et ingénieure logiciel depuis plus de {software} ans. J’ai commencé dans l’industrie — éoliennes, vélos en libre-service, IoT — avant de passer au logiciel en 2015. Depuis, je crée des applications full stack et je participe à toutes les phases du développement, comme Full Stack Engineer, Backend Engineer et Tech Lead.',
+      'Je suis ingénieure depuis plus de {total} ans, et ingénieure logiciel depuis plus de {software} ans. J’ai commencé dans l’industrie — éoliennes, vélos en libre-service, IoT, et un brevet au passage — avant de passer au logiciel en 2015. Depuis, je crée des applications full stack et je participe à toutes les phases du développement, comme Full Stack Engineer, Backend Engineer et Tech Lead.',
       'Aujourd’hui, je suis Technology Partner chez SustraiLab, où je transforme des idées en produits de bout en bout. Je donne le meilleur de moi-même en télétravail, dans de petites équipes autonomes où je vois l’impact de ce que je construis, où j’échange des idées avec mes collègues et où nous grandissons ensemble.',
       'J’apprécie la flexibilité et la communication asynchrone : elles me permettent d’adapter mon travail à ma vie tout en protégeant le temps de concentration dont j’ai besoin pour bien travailler. Et je crois qu’avec une vraie culture de l’écrit, une équipe à distance peut rester asynchrone tout en restant assez proche pour s’aider à grandir.',
     ],

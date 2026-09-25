@@ -128,7 +128,7 @@ export const en: Content = {
     eyebrow: 'About me',
     heading: 'What I can learn matters more than what I already know.',
     paragraphs: [
-      "I've been an engineer for more than {total} years, and a software engineer for more than {software}. I started in industry — wind turbines, bike-sharing systems, IoT — and moved into software in 2015. Since then I've built full-stack applications and taken part in every phase of development, as Full Stack Engineer, Backend Engineer and Tech Lead.",
+      "I've been an engineer for more than {total} years, and a software engineer for more than {software}. I started in industry — wind turbines, bike-sharing systems, IoT, and a patent along the way — and moved into software in 2015. Since then I've built full-stack applications and taken part in every phase of development, as Full Stack Engineer, Backend Engineer and Tech Lead.",
       "Today I'm a Technology Partner at SustraiLab, where I turn ideas into products end to end. I do my best work remotely, in small, empowered teams where I can see the impact of what I build, exchange ideas with my colleagues and grow together.",
       'I value flexibility and asynchronous communication: they let me fit my work around my life while protecting the focus time I need to do my best work. And I believe that with a strong written culture, a remote team can stay async and still be close enough to help each other grow.',
     ],
