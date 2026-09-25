@@ -43,7 +43,7 @@ export const es: Content = {
     eyebrow: 'Sobre mí',
     heading: 'Lo que puedo aprender importa más que lo que ya sé.',
     paragraphs: [
-      'Llevo más de {total} años como ingeniera y más de {software} como ingeniera de software. Empecé en la industria —aerogeneradores, bicicleta pública, IoT— y en 2015 me pasé al software. Desde entonces he creado aplicaciones full stack y he participado en todas las fases del desarrollo, como Full Stack Engineer, Backend Engineer y Tech Lead.',
+      'Llevo más de {total} años como ingeniera y más de {software} como ingeniera de software. Empecé en la industria —aerogeneradores, bicicleta pública, IoT y una patente por el camino— y en 2015 me pasé al software. Desde entonces he creado aplicaciones full stack y he participado en todas las fases del desarrollo, como Full Stack Engineer, Backend Engineer y Tech Lead.',
       'Hoy soy Technology Partner en SustraiLab, donde convierto ideas en productos de principio a fin. Trabajo mejor en remoto, en equipos pequeños y con autonomía, donde puedo ver el impacto de lo que construyo, intercambiar ideas con mis compañeros y crecer juntos.',
       'Valoro la flexibilidad y la comunicación asíncrona: me permiten adaptar el trabajo a mi vida y proteger el tiempo de concentración que necesito para dar lo mejor de mí. Y creo que, con una buena cultura escrita, un equipo en remoto puede ser asíncrono y a la vez estar lo bastante cerca como para ayudarse a crecer.',
     ],
