@@ -37,6 +37,7 @@ export interface Content {
     heading: string;
     text: string;
     items: Record<EarlierId, { role: string; text: string }>;
+    patent: { label: string; title: string; url: string };
   };
   education: {
     eyebrow: string;
@@ -204,7 +205,7 @@ export const en: Content = {
   roots: {
     eyebrow: 'Roots · 2004 — 2014',
     heading: 'Ten years of industrial engineering came first',
-    text: 'From wind turbines to bike-sharing locks and IoT: the engineering years before software.',
+    text: 'From wind turbines to bike-sharing locks and IoT: the engineering years before software, including a granted patent.',
     items: {
       ulma: {
         role: 'IoT Embedded Systems Engineer (intern)',
@@ -227,6 +228,7 @@ export const en: Content = {
         text: 'Led 5S, Lean Manufacturing and 6 Sigma projects. My VBA tools saved each manager 2 hours a week.',
       },
     },
+    patent: { label: 'Co-inventor · Patent EP2955092', title: 'System for anchoring and recharging electric rental bicycles', url: 'https://patents.google.com/patent/EP2955092B1/en' },
   },
   education: {
     eyebrow: 'Education',
