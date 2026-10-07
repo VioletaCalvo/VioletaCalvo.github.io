@@ -20,6 +20,7 @@ export const es: Content = {
     tagline: 'Ingeniera Full Stack',
     about: 'Sobre mí',
     experience: 'Experiencia',
+    projects: 'Proyectos',
     roots: 'Raíces',
     education: 'Formación',
     beyond: 'Más allá del trabajo',
@@ -114,6 +115,23 @@ export const es: Content = {
           'Diseñé y desarrollé el back office, con pagos avanzados y reembolsos en Stripe.',
           'También me encargué del diseño gráfico, las traducciones (FR/EN/ES), animaciones de vídeo y marketing en redes sociales.',
         ],
+      },
+    },
+  },
+  projects: {
+    eyebrow: 'Proyectos',
+    heading: 'Webs hechas con Sustrai Studio',
+    text: 'Sustrai Studio es mi marca para webs de personas y grupos cercanos, de la primera idea a la publicación.',
+    items: {
+      zirkoloretsua: {
+        client: 'Compañía de circo',
+        text: 'Web en castellano y euskera con sus espectáculos y la agenda de actuaciones, que la compañía actualiza sola desde un panel con acceso por código de correo. Diseño de Jabugrafik.',
+        imageAlt: 'Portada de la web de Zirkoloretsua',
+      },
+      laluciernaga: {
+        client: 'Grupo de montaña',
+        text: 'Web del grupo con sus excursiones, fotos y poesías, traída desde WordPress. Los miembros entran con su cuenta para ver los detalles, y quien administra aprueba cada acceso nuevo.',
+        imageAlt: 'Portada de la web de La Luciérnaga',
       },
     },
   },
@@ -230,6 +248,11 @@ export const es: Content = {
       { company: 'Schneider Electric', role: 'Ingeniera de mejora continua', years: '2004 – 2007' },
       { company: 'Prácticas', role: 'ULMA Embedded Solutions · HOFF distribution', years: '2014' },
     ],
+    projectsTitle: 'Proyectos · Sustrai Studio',
+    projects: {
+      zirkoloretsua: 'Web de una compañía de circo (ES/EU) con agenda que gestiona la compañía. Next.js, Cloudflare Workers, D1.',
+      laluciernaga: 'Web de un grupo de montaña traída desde WordPress, con acceso para miembros. Astro, Cloudflare, Better Auth.',
+    },
     beyondTitle: 'Fuera del trabajo',
     beyond:
       'Pole dance y acrobacias, buceo, acuarela y guitarra. Participo en proyectos de educación y comunidad con otras familias.',
