@@ -18,6 +18,26 @@ export const contact = {
   instagram: { url: 'https://www.instagram.com/katuarraina', handle: '@katuarraina' },
 };
 
+// Websites made with Sustrai Studio, Violeta's own brand, shown as a portfolio.
+export type ProjectId = 'zirkoloretsua' | 'laluciernaga';
+
+export const projects: { id: ProjectId; name: string; url: string; year: string; tech: string[] }[] = [
+  {
+    id: 'zirkoloretsua',
+    name: 'Zirkoloretsua',
+    url: 'https://zirkoloretsua.com',
+    year: '2026',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Cloudflare Workers', 'D1', 'Cloudflare Access'],
+  },
+  {
+    id: 'laluciernaga',
+    name: 'La Luciérnaga',
+    url: 'https://laluciernaga.sustrai-studio-by-violeta-calvo.workers.dev',
+    year: '2026',
+    tech: ['Astro', 'TypeScript', 'Cloudflare Workers', 'D1', 'R2', 'Better Auth'],
+  },
+];
+
 // Dates are ISO days. `end: null` means "present".
 export interface Range {
   start: string;

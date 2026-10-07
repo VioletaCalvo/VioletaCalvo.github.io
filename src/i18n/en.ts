@@ -1,10 +1,19 @@
-import type { BreakId, EarlierId, JobId } from '../data/cv';
+import type { BreakId, EarlierId, JobId, ProjectId } from '../data/cv';
 
 // `{software}` and `{total}` are replaced with the years of experience.
 export interface Content {
   meta: { title: string; description: string };
   a11y: { skip: string; openMenu: string; closeMenu: string; language: string; mainNav: string; newTab: string };
-  nav: { tagline: string; about: string; experience: string; roots: string; education: string; beyond: string; contact: string };
+  nav: {
+    tagline: string;
+    about: string;
+    experience: string;
+    projects: string;
+    roots: string;
+    education: string;
+    beyond: string;
+    contact: string;
+  };
   hero: {
     role: string;
     lead: string;
@@ -31,6 +40,12 @@ export interface Content {
     breaks: Record<BreakId, string>;
     duration: (months: number) => string;
     jobs: Record<JobId, { role: string; intro: string; bullets: string[]; tags?: string[] }>;
+  };
+  projects: {
+    eyebrow: string;
+    heading: string;
+    text: string;
+    items: Record<ProjectId, { client: string; text: string; imageAlt: string }>;
   };
   roots: {
     eyebrow: string;
@@ -71,6 +86,8 @@ export interface Content {
     jobs: Record<JobId, string>;
     earlierTitle: string;
     earlier: { company: string; role: string; years: string }[];
+    projectsTitle: string;
+    projects: Record<ProjectId, string>;
     beyondTitle: string;
     beyond: string;
   };
@@ -105,6 +122,7 @@ export const en: Content = {
     tagline: 'Full Stack Engineer',
     about: 'About',
     experience: 'Experience',
+    projects: 'Projects',
     roots: 'Roots',
     education: 'Education',
     beyond: 'Beyond work',
@@ -199,6 +217,23 @@ export const en: Content = {
           'Designed and built the back office, including advanced Stripe payments and refunds.',
           'Also handled graphic design, translations (FR/EN/ES), video animations and social media marketing.',
         ],
+      },
+    },
+  },
+  projects: {
+    eyebrow: 'Projects',
+    heading: 'Websites made with Sustrai Studio',
+    text: 'Sustrai Studio is my own brand for websites for people and groups close to me, from the first idea to going live.',
+    items: {
+      zirkoloretsua: {
+        client: 'Circus company',
+        text: 'A website in Spanish and Basque with their shows and an agenda of performances, which the company updates on its own from an admin area with sign-in by email code. Design by Jabugrafik.',
+        imageAlt: 'Home page of the Zirkoloretsua website',
+      },
+      laluciernaga: {
+        client: 'Mountain group',
+        text: 'The group’s website with its hikes, photos and poems, moved over from WordPress. Members sign in to see the details, and an administrator approves each new access.',
+        imageAlt: 'Home page of the La Luciérnaga website',
       },
     },
   },
@@ -315,6 +350,11 @@ export const en: Content = {
       { company: 'Schneider Electric', role: 'Continuous Improvement Engineer', years: '2004 – 2007' },
       { company: 'Internships', role: 'ULMA Embedded Solutions · HOFF distribution', years: '2014' },
     ],
+    projectsTitle: 'Projects · Sustrai Studio',
+    projects: {
+      zirkoloretsua: 'Circus company website (ES/EU) with a self-managed agenda. Next.js, Cloudflare Workers, D1.',
+      laluciernaga: 'Mountain group website moved from WordPress, with member sign-in. Astro, Cloudflare, Better Auth.',
+    },
     beyondTitle: 'Beyond work',
     beyond:
       'Pole dance & acrobatics, scuba diving, watercolors and guitar. Involved in education and community projects with other families.',

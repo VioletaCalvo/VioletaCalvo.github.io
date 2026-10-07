@@ -4,7 +4,7 @@
 import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import photo from '../../assets/violeta.jpg';
-import { contact, experienceYears, jobs, langs, type Lang } from '../../data/cv';
+import { contact, experienceYears, jobs, langs, projects, type Lang } from '../../data/cv';
 import { content, fillYears } from '../../i18n';
 
 export function getStaticPaths() {
@@ -85,6 +85,21 @@ const dates = (start: string, end: string | null) =>
                 <span class="when">{dates(j.start, j.end)}</span>
               </div>
               <p class="desc">{t.cv.jobs[j.id]}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="rule">{t.cv.projectsTitle}</h2>
+        <ul class="plain jobs">
+          {projects.map((p) => (
+            <li>
+              <div class="line">
+                <p class="title"><a href={p.url}><strong>{p.name}</strong></a></p>
+                <span class="when">{p.year}</span>
+              </div>
+              <p class="desc">{t.cv.projects[p.id]}</p>
             </li>
           ))}
         </ul>

@@ -6,6 +6,8 @@ import LangSwitch from './LangSwitch.astro';
 import photo from '../assets/violeta.jpg';
 import isotipo from '../assets/isotipo.png';
 import rootsFlower from '../assets/roots-flower.png';
+import zirkoloretsuaShot from '../assets/projects/zirkoloretsua.png';
+import laluciernagaShot from '../assets/projects/laluciernaga.png';
 import {
   contact,
   cvPdfPath,
@@ -13,6 +15,7 @@ import {
   experienceYears,
   monthsBetween,
   monthYear,
+  projects,
   timeline,
   year,
   type Lang,
@@ -48,12 +51,14 @@ const socials = [
 const navItems = [
   { href: '#about', label: t.nav.about },
   { href: '#experience', label: t.nav.experience },
+  { href: '#projects', label: t.nav.projects },
   { href: '#roots', label: t.nav.roots },
   { href: '#education', label: t.nav.education },
   { href: '#beyond', label: t.nav.beyond },
 ];
 
 const nodeColors = ['#7E5A9B', '#7FB7B4', '#8FAF9B'];
+const projectShots = { zirkoloretsua: zirkoloretsuaShot, laluciernaga: laluciernagaShot } as const;
 ---
 <Base lang={lang} title={t.meta.title} description={fillYears(t.meta.description, years)} alternates>
   <a class="skip-link" href="#main">{t.a11y.skip}</a>
@@ -244,6 +249,40 @@ const nodeColors = ['#7E5A9B', '#7FB7B4', '#8FAF9B'];
           );
         })}
       </ol>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="container section section-rule">
+      <div class="section-head">
+        <p class="eyebrow">{t.projects.eyebrow}</p>
+        <h2>{t.projects.heading}</h2>
+        <p class="projects-text">{t.projects.text}</p>
+      </div>
+      <ul class="projects">
+        {projects.map((p) => {
+          const item = t.projects.items[p.id];
+          return (
+            <li class="project">
+              <a class="project-shot" href={p.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <Image src={projectShots[p.id]} alt={item.imageAlt} width={640} height={400} format="webp" />
+              </a>
+              <div class="project-body">
+                <h3 class="job-company">{p.name}</h3>
+                <p class="job-role">{item.client} · {p.year}</p>
+                <p class="job-intro">{item.text}</p>
+                <ul class="chips">
+                  {p.tech.map((c) => <li class="chip">{c}</li>)}
+                </ul>
+                <a class="job-link" href={p.url} target="_blank" rel="noopener">
+                  {new URL(p.url).hostname.replace('www.', '')}
+                  <Icon name="external" size={14} />
+                  <span class="sr-only">{newTab}</span>
+                </a>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
     </section>
 
     <!-- Roots -->

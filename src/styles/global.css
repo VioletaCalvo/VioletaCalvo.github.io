@@ -724,6 +724,48 @@ h3 {
   font-size: 13px;
   font-weight: 500;
 }
+.projects-text {
+  max-width: 64ch;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  min-width: 0;
+}
+.project-shot {
+  display: block;
+  aspect-ratio: 16 / 10;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.project-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.project-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 28px 32px 32px;
+}
 .badge {
   height: 28px;
   padding: 0 12px;
@@ -1166,10 +1208,8 @@ h3 {
 }
 
 /* Tablet: header collapses into a menu, hero stacks */
-@media (max-width: 1080px) {
-  :root {
-    --gutter: 40px;
-  }
+/* Header collapses into a menu as soon as the seven links no longer fit on one line */
+@media (max-width: 1320px) {
   .header-inner {
     height: 76px;
     gap: 12px;
@@ -1212,6 +1252,12 @@ h3 {
   .nav-contact a {
     border-bottom: 0;
     color: var(--violet);
+  }
+}
+
+@media (max-width: 1080px) {
+  :root {
+    --gutter: 40px;
   }
 }
 

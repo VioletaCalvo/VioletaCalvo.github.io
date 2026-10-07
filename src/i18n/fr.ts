@@ -20,6 +20,7 @@ export const fr: Content = {
     tagline: 'Ingénieure Full Stack',
     about: 'À propos',
     experience: 'Expérience',
+    projects: 'Projets',
     roots: 'Racines',
     education: 'Formation',
     beyond: 'En dehors du travail',
@@ -114,6 +115,23 @@ export const fr: Content = {
           'Conception et développement du back-office, avec paiements avancés et remboursements via Stripe.',
           'Également en charge du design graphique, des traductions (FR/EN/ES), d’animations vidéo et du marketing sur les réseaux sociaux.',
         ],
+      },
+    },
+  },
+  projects: {
+    eyebrow: 'Projets',
+    heading: 'Sites créés avec Sustrai Studio',
+    text: 'Sustrai Studio est ma marque pour les sites de personnes et de groupes proches, de la première idée à la mise en ligne.',
+    items: {
+      zirkoloretsua: {
+        client: 'Compagnie de cirque',
+        text: 'Un site en espagnol et en basque avec ses spectacles et l’agenda des représentations, que la compagnie met à jour seule depuis un espace d’administration avec connexion par code e-mail. Design de Jabugrafik.',
+        imageAlt: 'Page d’accueil du site de Zirkoloretsua',
+      },
+      laluciernaga: {
+        client: 'Groupe de montagne',
+        text: 'Le site du groupe avec ses randonnées, ses photos et ses poèmes, migré depuis WordPress. Les membres se connectent pour voir les détails, et une personne administratrice valide chaque nouvel accès.',
+        imageAlt: 'Page d’accueil du site de La Luciérnaga',
       },
     },
   },
@@ -230,6 +248,11 @@ export const fr: Content = {
       { company: 'Schneider Electric', role: 'Ingénieure amélioration continue', years: '2004 – 2007' },
       { company: 'Stages', role: 'ULMA Embedded Solutions · HOFF distribution', years: '2014' },
     ],
+    projectsTitle: 'Projets · Sustrai Studio',
+    projects: {
+      zirkoloretsua: 'Site d’une compagnie de cirque (ES/EU) avec un agenda géré par la compagnie. Next.js, Cloudflare Workers, D1.',
+      laluciernaga: 'Site d’un groupe de montagne migré depuis WordPress, avec accès membres. Astro, Cloudflare, Better Auth.',
+    },
     beyondTitle: 'En dehors du travail',
     beyond:
       'Pole dance et acrobaties, plongée, aquarelle et guitare. Engagée dans des projets d’éducation et de communauté avec d’autres familles.',
