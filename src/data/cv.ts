@@ -32,7 +32,7 @@ export const projects: { id: ProjectId; name: string; url: string; year: string;
   {
     id: 'laluciernaga',
     name: 'La Luciérnaga',
-    url: 'https://laluciernaga.sustrai-studio-by-violeta-calvo.workers.dev',
+    url: 'https://laluciernaga.es',
     year: '2026',
     tech: ['Astro', 'TypeScript', 'Cloudflare Workers', 'D1', 'R2', 'Better Auth'],
   },
