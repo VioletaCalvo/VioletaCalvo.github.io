@@ -1,0 +1,48 @@
+---
+import Icon from './Icon.astro';
+import { contact, type Lang } from '../data/cv';
+import { content } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = content[lang];
+const newTab = `(${t.a11y.newTab})`;
+
+const socials = [
+  { name: 'GitHub', icon: 'github', url: contact.github.url, handle: contact.github.handle },
+  { name: 'LinkedIn', icon: 'linkedin', url: contact.linkedin.url, handle: contact.linkedin.handle },
+  { name: 'Instagram', icon: 'instagram', url: contact.instagram.url, handle: contact.instagram.handle },
+] as const;
+---
+<footer id="contact" class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-main">
+      <p class="eyebrow eyebrow-light">{t.contact.eyebrow}</p>
+      <h2>{t.contact.heading}</h2>
+      <p class="footer-text">{t.contact.text}</p>
+      <a class="btn btn-lavender" href={`mailto:${contact.email}`}><Icon name="mail" size={18} />{contact.email}</a>
+    </div>
+    <ul class="socials">
+      {socials.map((s) => (
+        <li>
+          <a href={s.url} target="_blank" rel="noopener">
+            <Icon name={s.icon} size={22} />
+            <span class="social-name">{s.name}</span>
+            <span class="social-handle">{s.handle}</span>
+            <Icon name="external" size={16} />
+            <span class="sr-only">{newTab}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© {new Date().getFullYear()} Violeta Calvo</span>
+      <span class="signature"><strong>Sustrai Studio</strong><em>by Violeta Calvo</em></span>
+    </div>
+  </div>
+</footer>
