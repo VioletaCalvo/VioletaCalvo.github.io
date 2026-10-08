@@ -8,7 +8,7 @@ export interface Content {
     tagline: string;
     about: string;
     experience: string;
-    projects: string;
+    work: string;
     roots: string;
     education: string;
     beyond: string;
@@ -39,14 +39,27 @@ export interface Content {
     careerBreak: string;
     breaks: Record<BreakId, string>;
     duration: (months: number) => string;
-    jobs: Record<JobId, { role: string; intro: string; bullets: string[]; tags?: string[] }>;
+    jobs: Record<JobId, { role: string; intro: string; bullets: string[]; tags?: string[]; aiNote?: { text: string; link: string } }>;
   };
+  ai: {
+    eyebrow: string;
+    heading: string;
+    text: string;
+    steps: { title: string; text: string }[];
+    problem: { label: string; text: string };
+    solution: { label: string; text: string };
+    result: { label: string; text: string };
+    stackLabel: string;
+    stack: string[];
+  };
+  work: { meta: { title: string; description: string }; eyebrow: string; heading: string; seeAll: string; patentText: string; caseStudy: string; backHome: string };
   projects: {
     eyebrow: string;
     heading: string;
     text: string;
-    items: Record<ProjectId, { client: string; text: string; imageAlt: string }>;
+    items: Record<ProjectId, { client: string; summary: string; text: string; imageAlt: string }>;
   };
+  video: { eyebrow: string; heading: string; text: string; play: string; watchOn: string };
   roots: {
     eyebrow: string;
     heading: string;
@@ -122,7 +135,7 @@ export const en: Content = {
     tagline: 'Full Stack Engineer',
     about: 'About',
     experience: 'Experience',
-    projects: 'Projects',
+    work: 'Work',
     roots: 'Roots',
     education: 'Education',
     beyond: 'Beyond work',
@@ -159,7 +172,7 @@ export const en: Content = {
   },
   experience: {
     eyebrow: 'Experience',
-    heading: 'Building software since 2015',
+    heading: 'Building products since 2015',
     present: 'Present',
     current: 'Current',
     careerBreak: 'Career break',
@@ -178,6 +191,10 @@ export const en: Content = {
           'I turn product ideas into working digital products, covering product strategy, architecture, development and deployment. I build modern web applications and SaaS products with a strong focus on simplicity, automation and AI-assisted workflows.',
         bullets: [],
         tags: ['Product strategy', 'Architecture', 'SaaS', 'Automation', 'AI-assisted workflows'],
+        aiNote: {
+          text: 'Built an async agent loop that removes the manual relay between my coding sessions and my partner.',
+          link: 'Async Partner Loop ↓',
+        },
       },
       hiboo: {
         role: 'Senior Full Stack Engineer',
@@ -220,6 +237,40 @@ export const en: Content = {
       },
     },
   },
+  ai: {
+    eyebrow: 'AI & Automation',
+    heading: 'Async Partner Loop',
+    text: 'A question-and-answer loop between my coding sessions and my business partner, with no manual relay.',
+    steps: [
+      { title: 'Ask', text: 'Each coding session adds questions to a shared page.' },
+      { title: 'Answer', text: 'My partner replies when she can, from her phone or by voice.' },
+      { title: 'Notify', text: 'One tap on "notify" and I get the answers.' },
+      { title: 'Act', text: 'An hourly agent reads them and continues the work.' },
+    ],
+    problem: {
+      label: 'Problem',
+      text: 'I was the human relay: collecting questions from each coding session, sending them to my partner, gathering her answers and pasting them back to the AI.',
+    },
+    solution: {
+      label: 'Solution',
+      text: 'A shared web page on a real-time database. Questions arrive grouped by project and batch. Answers autosave as drafts and sync live. An hourly agent sends new questions, reads the answers and acts on them without my intervention.',
+    },
+    result: {
+      label: 'Result',
+      text: "My partner answers whenever she can, on her own schedule, and I'm notified with one tap, so I can stay in deep focus instead of context-switching. No manual relay, no chasing answers: the question, answer and action loop runs on its own. I automated it from day one, because relaying information by hand is a design smell, and an engineer should treat it like one.",
+    },
+    stackLabel: 'Stack',
+    stack: ['Claude', 'Real-time database', 'Scheduled agent runs', 'Voice dictation'],
+  },
+  work: {
+    meta: { title: 'Work · Violeta Calvo', description: 'Case studies and websites by Violeta Calvo: AI automation and sites made with Sustrai Studio.' },
+    eyebrow: 'Work',
+    heading: 'Selected work',
+    seeAll: 'See all work',
+    patentText: 'A granted patent from my time as Design and Development Engineer at Bonopark.',
+    caseStudy: 'Case study',
+    backHome: 'Back to home',
+  },
   projects: {
     eyebrow: 'Projects',
     heading: 'Websites made with Sustrai Studio',
@@ -227,15 +278,24 @@ export const en: Content = {
     items: {
       zirkoloretsua: {
         client: 'Circus company',
+        summary: 'A website with their shows and an agenda the company updates on its own.',
         text: 'A website in Spanish and Basque with their shows and an agenda of performances, which the company updates on its own from an admin area with sign-in by email code. Design by Jabugrafik.',
         imageAlt: 'Home page of the Zirkoloretsua website',
       },
       laluciernaga: {
         client: 'Mountain group',
+        summary: 'The group’s hikes, photos and poems, moved from WordPress, with member sign-in.',
         text: 'The group’s website with its hikes, photos and poems, moved over from WordPress. Members sign in to see the details, and an administrator approves each new access.',
         imageAlt: 'Home page of the La Luciérnaga website',
       },
     },
+  },
+  video: {
+    eyebrow: 'Animation',
+    heading: '3D marketing animation',
+    text: 'Made during my internship at HOFF.',
+    play: 'Play the video',
+    watchOn: 'Watch on YouTube',
   },
   roots: {
     eyebrow: 'Roots · 2004 — 2014',
@@ -248,7 +308,7 @@ export const en: Content = {
       },
       hoff: {
         role: '3D Engineer (intern)',
-        text: 'A 3D marketing animation and 3D molds for wooden skateboards, working in French.',
+        text: 'Designed 3D molds for wooden skateboards and made a 3D marketing animation, working in French.',
       },
       bonopark: {
         role: 'Design and Development Engineer',

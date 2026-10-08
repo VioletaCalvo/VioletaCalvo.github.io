@@ -4,15 +4,16 @@ import { homePath, langs, type Lang } from '../data/cv';
 interface Props {
   lang: Lang;
   label: string;
+  paths?: Record<Lang, string>;
 }
 
-const { lang, label } = Astro.props;
+const { lang, label, paths = homePath } = Astro.props;
 const names: Record<Lang, string> = { en: 'English', es: 'Español', fr: 'Français' };
 ---
 <nav class="lang-switch" aria-label={label}>
   {langs.map((l) => (
     <a
-      href={homePath[l]}
+      href={paths[l]}
       lang={l}
       hreflang={l}
       aria-current={l === lang ? 'page' : undefined}

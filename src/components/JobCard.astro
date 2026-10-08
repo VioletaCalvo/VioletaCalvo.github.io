@@ -1,0 +1,29 @@
+---
+interface Props {
+  current: boolean;
+  /** Older jobs are collapsed: only the title shows until the card is opened. */
+  folded: boolean;
+}
+
+const { current, folded } = Astro.props;
+---
+<article class:list={['job', { 'job-current': current, 'job-folded': folded }]}>
+  {
+    folded ? (
+      <details>
+        <summary class="job-summary">
+          <span class="job-summary-main"><slot name="head" /></span>
+          <svg class="job-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <div class="job-more"><slot /></div>
+      </details>
+    ) : (
+      <>
+        <slot name="head" />
+        <slot />
+      </>
+    )
+  }
+</article>

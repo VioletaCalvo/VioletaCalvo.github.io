@@ -1,0 +1,157 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Icon from './Icon.astro';
+import SiteFooter from './SiteFooter.astro';
+import SiteHeader from './SiteHeader.astro';
+import zirkoloretsuaShot from '../assets/projects/zirkoloretsua.png';
+import laluciernagaShot from '../assets/projects/laluciernaga.png';
+import hoffShot from '../assets/projects/hoff-animation.jpg';
+import { hoffVideo, homePath, projects, workPath, type Lang } from '../data/cv';
+import { content } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = content[lang];
+const newTab = `(${t.a11y.newTab})`;
+const projectShots = { zirkoloretsua: zirkoloretsuaShot, laluciernaga: laluciernagaShot } as const;
+---
+<Base lang={lang} title={t.work.meta.title} description={t.work.meta.description} alternates paths={workPath}>
+  <a class="skip-link" href="#main">{t.a11y.skip}</a>
+
+  <SiteHeader lang={lang} current="work" />
+
+  <main id="main">
+    <section class="container work-intro">
+      <a class="back-link" href={homePath[lang]}><Icon name="arrow" size={16} />{t.work.backHome}</a>
+      <div class="section-head">
+        <p class="eyebrow">{t.work.eyebrow}</p>
+        <h1>{t.work.heading}</h1>
+      </div>
+    </section>
+
+    <!-- AI & Automation -->
+    <section id="ai" class="container section section-rule">
+      <div class="section-head">
+        <p class="eyebrow">{t.ai.eyebrow}</p>
+        <h2>{t.ai.heading}</h2>
+        <p class="section-lead">{t.ai.text}</p>
+      </div>
+      <ol class="ai-steps">
+        {t.ai.steps.map((step) => (
+          <li class="ai-step">
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </li>
+        ))}
+      </ol>
+      <dl class="ai-case">
+        {[t.ai.problem, t.ai.solution, t.ai.result].map((row) => (
+          <div class="ai-row">
+            <dt>{row.label}</dt>
+            <dd>{row.text}</dd>
+          </div>
+        ))}
+        <div class="ai-row">
+          <dt>{t.ai.stackLabel}</dt>
+          <dd>
+            <ul class="chips">
+              {t.ai.stack.map((s) => <li class="chip">{s}</li>)}
+            </ul>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="container section section-rule">
+      <div class="section-head">
+        <p class="eyebrow">{t.projects.eyebrow}</p>
+        <h2>{t.projects.heading}</h2>
+        <p class="projects-text">{t.projects.text}</p>
+      </div>
+      <ul class="projects">
+        {projects.map((p) => {
+          const item = t.projects.items[p.id];
+          return (
+            <li class="project" id={p.id}>
+              <a class="project-shot" href={p.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <Image src={projectShots[p.id]} alt={item.imageAlt} width={640} height={400} format="webp" />
+              </a>
+              <div class="project-body">
+                <h3 class="job-company">{p.name}</h3>
+                <p class="job-role">{item.client} · {p.year}</p>
+                <p class="job-intro">{item.text}</p>
+                <ul class="chips">
+                  {p.tech.map((c) => <li class="chip">{c}</li>)}
+                </ul>
+                <a class="job-link" href={p.url} target="_blank" rel="noopener">
+                  {new URL(p.url).hostname.replace('www.', '')}
+                  <Icon name="external" size={14} />
+                  <span class="sr-only">{newTab}</span>
+                </a>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+
+    <!-- Video: the YouTube player only loads when it is played -->
+    <section id="hoff" class="container section section-rule">
+      <div class="section-head">
+        <p class="eyebrow">{t.video.eyebrow}</p>
+        <h2>{t.video.heading}</h2>
+        <p class="section-lead">{t.video.text}</p>
+      </div>
+      <div class="video" data-video-id={hoffVideo.id} data-video-title={t.video.heading}>
+        <button class="video-play" type="button">
+          <Image src={hoffShot} alt="" width={960} height={540} format="webp" />
+          <span class="video-play-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+          </span>
+          <span class="sr-only">{t.video.play}</span>
+        </button>
+      </div>
+      <a class="job-link video-link" href={hoffVideo.url} target="_blank" rel="noopener">
+        {t.video.watchOn}
+        <Icon name="external" size={14} />
+        <span class="sr-only">{newTab}</span>
+      </a>
+    </section>
+
+    <!-- Patent -->
+    <section id="patent" class="container section section-rule">
+      <div class="section-head">
+        <p class="eyebrow">{t.roots.patent.label}</p>
+        <h2>{t.roots.patent.title}</h2>
+        <p class="section-lead">{t.work.patentText}</p>
+      </div>
+      <a class="job-link patent-link" href={t.roots.patent.url} target="_blank" rel="noopener">
+        {new URL(t.roots.patent.url).hostname}
+        <Icon name="external" size={14} />
+        <span class="sr-only">{newTab}</span>
+      </a>
+    </section>
+  </main>
+
+  <SiteFooter lang={lang} />
+
+  <script>
+    // Swap the thumbnail for the player on the first click (privacy-friendly embed, no YouTube request before).
+    document.querySelectorAll<HTMLElement>('[data-video-id]').forEach((box) => {
+      box.querySelector('button')?.addEventListener('click', () => {
+        const frame = document.createElement('iframe');
+        frame.src = `https://www.youtube-nocookie.com/embed/${box.dataset.videoId}?autoplay=1`;
+        frame.title = box.dataset.videoTitle ?? '';
+        frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        frame.allowFullscreen = true;
+        box.replaceChildren(frame);
+        frame.focus();
+      });
+    });
+  </script>
+</Base>

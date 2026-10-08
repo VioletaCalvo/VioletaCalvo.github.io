@@ -20,7 +20,7 @@ export const es: Content = {
     tagline: 'Ingeniera Full Stack',
     about: 'Sobre mí',
     experience: 'Experiencia',
-    projects: 'Proyectos',
+    work: 'Trabajo',
     roots: 'Raíces',
     education: 'Formación',
     beyond: 'Más allá del trabajo',
@@ -57,7 +57,7 @@ export const es: Content = {
   },
   experience: {
     eyebrow: 'Experiencia',
-    heading: 'Creando software desde 2015',
+    heading: 'Creando productos desde 2015',
     present: 'Actualidad',
     current: 'Actual',
     careerBreak: 'Pausa profesional',
@@ -76,6 +76,10 @@ export const es: Content = {
           'Convierto ideas de producto en productos digitales que funcionan, cubriendo estrategia de producto, arquitectura, desarrollo y despliegue. Creo aplicaciones web modernas y productos SaaS con un fuerte foco en la simplicidad, la automatización y los flujos de trabajo con IA.',
         bullets: [],
         tags: ['Estrategia de producto', 'Arquitectura', 'SaaS', 'Automatización', 'Flujos de trabajo con IA'],
+        aiNote: {
+          text: 'Creé un bucle asíncrono con agentes que elimina el relevo manual entre mis sesiones de código y mi socia.',
+          link: 'Async Partner Loop ↓',
+        },
       },
       hiboo: {
         role: 'Senior Full Stack Engineer',
@@ -118,6 +122,40 @@ export const es: Content = {
       },
     },
   },
+  ai: {
+    eyebrow: 'IA y automatización',
+    heading: 'Async Partner Loop',
+    text: 'Un bucle de preguntas y respuestas entre mis sesiones de código y mi socia, sin relevo manual.',
+    steps: [
+      { title: 'Preguntar', text: 'Cada sesión de código añade preguntas a una página compartida.' },
+      { title: 'Responder', text: 'Mi socia contesta cuando puede, desde el móvil o por voz.' },
+      { title: 'Avisar', text: 'Con un toque en «avisar» recibo las respuestas.' },
+      { title: 'Actuar', text: 'Un agente que se ejecuta cada hora las lee y continúa el trabajo.' },
+    ],
+    problem: {
+      label: 'Problema',
+      text: 'Yo era el relevo humano: recogía las preguntas de cada sesión de código, se las enviaba a mi socia, reunía sus respuestas y las volvía a pegar en la IA.',
+    },
+    solution: {
+      label: 'Solución',
+      text: 'Una página web compartida sobre una base de datos en tiempo real. Las preguntas llegan agrupadas por proyecto y por lote. Las respuestas se guardan solas como borradores y se sincronizan en directo. Un agente que se ejecuta cada hora envía las preguntas nuevas, lee las respuestas y actúa sobre ellas sin que yo intervenga.',
+    },
+    result: {
+      label: 'Resultado',
+      text: 'Mi socia responde cuando puede, a su ritmo, y yo recibo el aviso con un toque, así que puedo mantener la concentración profunda en vez de cambiar de contexto. Sin relevo manual y sin perseguir respuestas: el bucle de pregunta, respuesta y acción funciona solo. Lo automaticé desde el primer día, porque pasar información a mano es un mal olor de diseño, y una ingeniera debe tratarlo como tal.',
+    },
+    stackLabel: 'Stack',
+    stack: ['Claude', 'Base de datos en tiempo real', 'Ejecuciones programadas de agentes', 'Dictado por voz'],
+  },
+  work: {
+    meta: { title: 'Trabajo · Violeta Calvo', description: 'Casos de estudio y webs de Violeta Calvo: automatización con IA y webs hechas con Sustrai Studio.' },
+    eyebrow: 'Trabajo',
+    heading: 'Trabajos seleccionados',
+    seeAll: 'Ver todo el trabajo',
+    patentText: 'Una patente concedida de mis años como ingeniera de diseño y desarrollo en Bonopark.',
+    caseStudy: 'Caso de estudio',
+    backHome: 'Volver al inicio',
+  },
   projects: {
     eyebrow: 'Proyectos',
     heading: 'Webs hechas con Sustrai Studio',
@@ -125,15 +163,24 @@ export const es: Content = {
     items: {
       zirkoloretsua: {
         client: 'Compañía de circo',
+        summary: 'Web con sus espectáculos y una agenda que la compañía actualiza sola.',
         text: 'Web en castellano y euskera con sus espectáculos y la agenda de actuaciones, que la compañía actualiza sola desde un panel con acceso por código de correo. Diseño de Jabugrafik.',
         imageAlt: 'Portada de la web de Zirkoloretsua',
       },
       laluciernaga: {
         client: 'Grupo de montaña',
+        summary: 'Las excursiones, fotos y poesías del grupo, traídas desde WordPress, con acceso para miembros.',
         text: 'Web del grupo con sus excursiones, fotos y poesías, traída desde WordPress. Los miembros entran con su cuenta para ver los detalles, y quien administra aprueba cada acceso nuevo.',
         imageAlt: 'Portada de la web de La Luciérnaga',
       },
     },
+  },
+  video: {
+    eyebrow: 'Animación',
+    heading: 'Animación 3D de marketing',
+    text: 'Hecha durante mis prácticas en HOFF.',
+    play: 'Reproducir el vídeo',
+    watchOn: 'Ver en YouTube',
   },
   roots: {
     eyebrow: 'Raíces · 2004 — 2014',
@@ -146,7 +193,7 @@ export const es: Content = {
       },
       hoff: {
         role: 'Ingeniera 3D (prácticas)',
-        text: 'Una animación 3D de marketing y moldes 3D para skateboards de madera, trabajando en francés.',
+        text: 'Diseñé moldes 3D para skateboards de madera y creé una animación 3D de marketing, trabajando en francés.',
       },
       bonopark: {
         role: 'Ingeniera de diseño y desarrollo',

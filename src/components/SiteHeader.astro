@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import LangSwitch from './LangSwitch.astro';
+import isotipo from '../assets/isotipo.png';
+import { homePath, workPath, type Lang } from '../data/cv';
+import { content } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  current: 'home' | 'work';
+}
+
+const { lang, current } = Astro.props;
+const t = content[lang];
+const home = homePath[lang];
+const isHome = current === 'home';
+// On the home page the sections are anchors; from any other page they live on the home page.
+const section = (id: string) => (isHome ? `#${id}` : `${home}#${id}`);
+
+const navItems = [
+  { href: section('about'), label: t.nav.about },
+  { href: section('experience'), label: t.nav.experience },
+  { href: isHome ? '#work' : workPath[lang], label: t.nav.work, current: current === 'work' },
+  { href: section('roots'), label: t.nav.roots },
+  { href: section('education'), label: t.nav.education },
+  { href: section('beyond'), label: t.nav.beyond },
+];
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={isHome ? '#top' : home}>
+      <Image src={isotipo} alt="" width={38} height={48} densities={[1, 2]} class="brand-mark" />
+      <span class="brand-text">
+        <span class="brand-name">Violeta Calvo</span>
+        <span class="brand-tagline">{t.nav.tagline}</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label={t.a11y.mainNav} data-open="false">
+      <ul class="nav-links">
+        {navItems.map((item) => (
+          <li><a class="nav-link" href={item.href} aria-current={item.current ? 'page' : undefined}>{item.label}</a></li>
+        ))}
+        <li class="nav-contact"><a class="nav-link" href="#contact">{t.nav.contact}</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <LangSwitch lang={lang} label={t.a11y.language} paths={isHome ? homePath : workPath} />
+      <a class="btn btn-primary btn-sm header-cta" href="#contact">{t.nav.contact}</a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-controls="main-nav"
+        aria-expanded="false"
+        aria-label={t.a11y.openMenu}
+        data-open-label={t.a11y.openMenu}
+        data-close-label={t.a11y.closeMenu}
+      >
+        <span class="menu-icon-open"><Icon name="menu" /></span>
+        <span class="menu-icon-close"><Icon name="close" /></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu.
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const nav = document.getElementById('main-nav');
+  if (toggle && nav) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', (open ? toggle.dataset.closeLabel : toggle.dataset.openLabel) ?? '');
+      nav.dataset.open = String(open);
+    };
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    nav.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+  }
+</script>

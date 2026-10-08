@@ -9,12 +9,13 @@ interface Props {
   lang: Lang;
   title: string;
   description?: string;
-  /** Add hreflang alternates between the three home pages. */
+  /** Add hreflang alternates: the page of each language (the home pages by default). */
   alternates?: boolean;
+  paths?: Record<Lang, string>;
   noindex?: boolean;
 }
 
-const { lang, title, description, alternates = false, noindex = false } = Astro.props;
+const { lang, title, description, alternates = false, paths = homePath, noindex = false } = Astro.props;
 const site = Astro.site ?? new URL('https://violetacalvo.github.io');
 const canonical = new URL(Astro.url.pathname, site);
 const ogLocale: Record<Lang, string> = { en: 'en_US', es: 'es_ES', fr: 'fr_FR' };
@@ -36,9 +37,9 @@ const ogLocale: Record<Lang, string> = { en: 'en_US', es: 'es_ES', fr: 'fr_FR' }
       alternates && (
         <>
           {langs.map((l) => (
-            <link rel="alternate" hreflang={l} href={new URL(homePath[l], site)} />
+            <link rel="alternate" hreflang={l} href={new URL(paths[l], site)} />
           ))}
-          <link rel="alternate" hreflang="x-default" href={new URL(homePath.en, site)} />
+          <link rel="alternate" hreflang="x-default" href={new URL(paths.en, site)} />
         </>
       )
     }

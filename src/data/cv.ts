@@ -5,6 +5,7 @@ export const langs = ['en', 'es', 'fr'] as const;
 export type Lang = (typeof langs)[number];
 
 export const homePath: Record<Lang, string> = { en: '/', es: '/es/', fr: '/fr/' };
+export const workPath: Record<Lang, string> = { en: '/work/', es: '/es/work/', fr: '/fr/work/' };
 export const cvPdfPath = (lang: Lang) => `/cv/violeta-calvo-cv-${lang}.pdf`;
 
 export const contact = {
@@ -37,6 +38,9 @@ export const projects: { id: ProjectId; name: string; url: string; year: string;
     tech: ['Astro', 'TypeScript', 'Cloudflare Workers', 'D1', 'R2', 'Better Auth'],
   },
 ];
+
+// Animation made during the HOFF internship.
+export const hoffVideo = { id: 'u1Z9eipeNeU', url: 'https://www.youtube.com/watch?v=u1Z9eipeNeU' };
 
 // Dates are ISO days. `end: null` means "present".
 export interface Range {

@@ -2,12 +2,14 @@
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Icon from './Icon.astro';
-import LangSwitch from './LangSwitch.astro';
+import JobCard from './JobCard.astro';
+import SiteFooter from './SiteFooter.astro';
+import SiteHeader from './SiteHeader.astro';
 import photo from '../assets/violeta.jpg';
 import isotipo from '../assets/isotipo.png';
 import rootsFlower from '../assets/roots-flower.png';
-import zirkoloretsuaShot from '../assets/projects/zirkoloretsua.png';
-import laluciernagaShot from '../assets/projects/laluciernaga.png';
+import zirkoloretsuaCircle from '../assets/projects/zirkoloretsua-circle.png';
+import laluciernagaCircle from '../assets/projects/laluciernaga-circle.png';
 import {
   contact,
   cvPdfPath,
@@ -17,6 +19,7 @@ import {
   monthYear,
   projects,
   timeline,
+  workPath,
   year,
   type Lang,
 } from '../data/cv';
@@ -42,64 +45,28 @@ const values = [
   { icon: 'sprout', ...t.about.values[3] },
 ] as const;
 
-const socials = [
-  { name: 'GitHub', icon: 'github', url: contact.github.url, handle: contact.github.handle },
-  { name: 'LinkedIn', icon: 'linkedin', url: contact.linkedin.url, handle: contact.linkedin.handle },
-  { name: 'Instagram', icon: 'instagram', url: contact.instagram.url, handle: contact.instagram.handle },
-] as const;
-
-const navItems = [
-  { href: '#about', label: t.nav.about },
-  { href: '#experience', label: t.nav.experience },
-  { href: '#projects', label: t.nav.projects },
-  { href: '#roots', label: t.nav.roots },
-  { href: '#education', label: t.nav.education },
-  { href: '#beyond', label: t.nav.beyond },
-];
+// Only the latest jobs show in full; the rest open on demand to keep the page short.
+const expandedJobs = new Set(timeline.filter((item) => item.kind === 'job').slice(0, 2).map((item) => item.id));
 
 const nodeColors = ['#7E5A9B', '#7FB7B4', '#8FAF9B'];
-const projectShots = { zirkoloretsua: zirkoloretsuaShot, laluciernaga: laluciernagaShot } as const;
+
+// Square crops of each site's screenshot, centred on its most recognisable part.
+const projectVisuals = { zirkoloretsua: zirkoloretsuaCircle, laluciernaga: laluciernagaCircle } as const;
+const teasers = [
+  { href: `${workPath[lang]}#ai`, kind: t.work.caseStudy, name: t.ai.heading, text: t.ai.text, visual: null },
+  ...projects.map((p) => ({
+    href: `${workPath[lang]}#${p.id}`,
+    kind: `${t.projects.items[p.id].client} · ${p.year}`,
+    name: p.name,
+    text: t.projects.items[p.id].summary,
+    visual: projectVisuals[p.id],
+  })),
+];
 ---
 <Base lang={lang} title={t.meta.title} description={fillYears(t.meta.description, years)} alternates>
   <a class="skip-link" href="#main">{t.a11y.skip}</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top">
-        <Image src={isotipo} alt="" width={38} height={48} densities={[1, 2]} class="brand-mark" />
-        <span class="brand-text">
-          <span class="brand-name">Violeta Calvo</span>
-          <span class="brand-tagline">{t.nav.tagline}</span>
-        </span>
-      </a>
-
-      <nav class="main-nav" id="main-nav" aria-label={t.a11y.mainNav} data-open="false">
-        <ul class="nav-links">
-          {navItems.map((item) => (
-            <li><a class="nav-link" href={item.href}>{item.label}</a></li>
-          ))}
-          <li class="nav-contact"><a class="nav-link" href="#contact">{t.nav.contact}</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <LangSwitch lang={lang} label={t.a11y.language} />
-        <a class="btn btn-primary btn-sm header-cta" href="#contact">{t.nav.contact}</a>
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-controls="main-nav"
-          aria-expanded="false"
-          aria-label={t.a11y.openMenu}
-          data-open-label={t.a11y.openMenu}
-          data-close-label={t.a11y.closeMenu}
-        >
-          <span class="menu-icon-open"><Icon name="menu" /></span>
-          <span class="menu-icon-close"><Icon name="close" /></span>
-        </button>
-      </div>
-    </div>
-  </header>
+  <SiteHeader lang={lang} current="home" />
 
   <main id="main">
     <!-- Hero -->
@@ -207,6 +174,14 @@ const projectShots = { zirkoloretsua: zirkoloretsuaShot, laluciernaga: laluciern
           const isCurrent = item.end === null;
           const dates = isCurrent ? `${year(item.start)} — ${t.experience.present}` : range(item.start, item.end);
           const duration = isCurrent ? null : t.experience.duration(monthsBetween(item));
+          const folded = !expandedJobs.has(item.id);
+          const link = item.url && (
+            <a class="job-link" href={item.url} target="_blank" rel="noopener">
+              {new URL(item.url).hostname.replace('www.', '')}
+              <Icon name="external" size={14} />
+              <span class="sr-only">{newTab}</span>
+            </a>
+          );
           return (
             <li class:list={['tl-item', { 'tl-current': isCurrent }]}>
               <span class="tl-node" aria-hidden="true" />
@@ -214,27 +189,24 @@ const projectShots = { zirkoloretsua: zirkoloretsuaShot, laluciernaga: laluciern
                 <span class="tl-range">{dates}</span>
                 {duration && <span class="tl-duration">{duration}</span>}
               </p>
-              <article class:list={['job', { 'job-current': isCurrent }]}>
-                <p class="job-date">
-                  <span>{dates}</span>
-                  {duration && <span class="tl-duration">{duration}</span>}
-                </p>
-                <header class="job-head">
-                  <div>
-                    <h3 class="job-company">
-                      {item.company}
-                      {isCurrent && <span class="badge">{t.experience.current}</span>}
-                    </h3>
-                    <p class="job-role">{job.role}</p>
-                  </div>
-                  {item.url && (
-                    <a class="job-link" href={item.url} target="_blank" rel="noopener">
-                      {new URL(item.url).hostname.replace('www.', '')}
-                      <Icon name="external" size={14} />
-                      <span class="sr-only">{newTab}</span>
-                    </a>
-                  )}
-                </header>
+              <JobCard current={isCurrent} folded={folded}>
+                <Fragment slot="head">
+                  <p class="job-date">
+                    <span>{dates}</span>
+                    {duration && <span class="tl-duration">{duration}</span>}
+                  </p>
+                  <header class="job-head">
+                    <div>
+                      <h3 class="job-company">
+                        {item.company}
+                        {isCurrent && <span class="badge">{t.experience.current}</span>}
+                      </h3>
+                      <p class="job-role">{job.role}</p>
+                    </div>
+                    {!folded && link}
+                  </header>
+                </Fragment>
+                {folded && link}
                 <p class="job-intro">{job.intro}</p>
                 {job.bullets.length > 0 && (
                   <ul class="bullets">
@@ -244,45 +216,44 @@ const projectShots = { zirkoloretsua: zirkoloretsuaShot, laluciernaga: laluciern
                 <ul class="chips">
                   {(job.tags ?? item.tech).map((c) => <li class="chip">{c}</li>)}
                 </ul>
-              </article>
+                {job.aiNote && (
+                  <p class="job-note">
+                    {job.aiNote.text} <a href="#work">{job.aiNote.link}</a>
+                  </p>
+                )}
+              </JobCard>
             </li>
           );
         })}
       </ol>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="container section section-rule">
+    <!-- Selected work: the full case studies live on the work page -->
+    <section id="work" class="container section section-rule">
       <div class="section-head">
-        <p class="eyebrow">{t.projects.eyebrow}</p>
-        <h2>{t.projects.heading}</h2>
-        <p class="projects-text">{t.projects.text}</p>
+        <p class="eyebrow">{t.work.eyebrow}</p>
+        <h2>{t.work.heading}</h2>
       </div>
-      <ul class="projects">
-        {projects.map((p) => {
-          const item = t.projects.items[p.id];
-          return (
-            <li class="project">
-              <a class="project-shot" href={p.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-                <Image src={projectShots[p.id]} alt={item.imageAlt} width={640} height={400} format="webp" />
-              </a>
-              <div class="project-body">
-                <h3 class="job-company">{p.name}</h3>
-                <p class="job-role">{item.client} · {p.year}</p>
-                <p class="job-intro">{item.text}</p>
-                <ul class="chips">
-                  {p.tech.map((c) => <li class="chip">{c}</li>)}
-                </ul>
-                <a class="job-link" href={p.url} target="_blank" rel="noopener">
-                  {new URL(p.url).hostname.replace('www.', '')}
-                  <Icon name="external" size={14} />
-                  <span class="sr-only">{newTab}</span>
-                </a>
-              </div>
-            </li>
-          );
-        })}
+      <ul class="teasers">
+        {teasers.map((item) => (
+          <li>
+            <a class="teaser" href={item.href}>
+              <span class="teaser-visual" aria-hidden="true">
+                {item.visual ? (
+                  <Image src={item.visual} alt="" width={144} height={144} format="webp" />
+                ) : (
+                  <Icon name="loop" size={32} />
+                )}
+              </span>
+              <span class="teaser-kind">{item.kind}</span>
+              <span class="teaser-name">{item.name}</span>
+              <span class="teaser-text">{item.text}</span>
+              <span class="teaser-arrow" aria-hidden="true"><Icon name="arrow" size={20} /></span>
+            </a>
+          </li>
+        ))}
       </ul>
+      <a class="btn btn-outline teasers-all" href={workPath[lang]}>{t.work.seeAll}</a>
     </section>
 
     <!-- Roots -->
@@ -382,36 +353,7 @@ const projectShots = { zirkoloretsua: zirkoloretsuaShot, laluciernaga: laluciern
     </section>
   </main>
 
-  <!-- Contact -->
-  <footer id="contact" class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-main">
-        <p class="eyebrow eyebrow-light">{t.contact.eyebrow}</p>
-        <h2>{t.contact.heading}</h2>
-        <p class="footer-text">{t.contact.text}</p>
-        <a class="btn btn-lavender" href={`mailto:${contact.email}`}><Icon name="mail" size={18} />{contact.email}</a>
-      </div>
-      <ul class="socials">
-        {socials.map((s) => (
-          <li>
-            <a href={s.url} target="_blank" rel="noopener">
-              <Icon name={s.icon} size={22} />
-              <span class="social-name">{s.name}</span>
-              <span class="social-handle">{s.handle}</span>
-              <Icon name="external" size={16} />
-              <span class="sr-only">{newTab}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-    <div class="container">
-      <div class="footer-bottom">
-        <span>© {new Date().getFullYear()} Violeta Calvo</span>
-        <span class="signature"><strong>Sustrai Studio</strong><em>by Violeta Calvo</em></span>
-      </div>
-    </div>
-  </footer>
+  <SiteFooter lang={lang} />
 
   <script>
     import { experienceYears } from '../data/cv';
@@ -422,26 +364,5 @@ const projectShots = { zirkoloretsua: zirkoloretsuaShot, laluciernaga: laluciern
       const key = el.dataset.years as keyof typeof years;
       if (key in years) el.textContent = String(years[key]);
     });
-
-    // Mobile menu.
-    const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
-    const nav = document.getElementById('main-nav');
-    if (toggle && nav) {
-      const setOpen = (open: boolean) => {
-        toggle.setAttribute('aria-expanded', String(open));
-        toggle.setAttribute('aria-label', (open ? toggle.dataset.closeLabel : toggle.dataset.openLabel) ?? '');
-        nav.dataset.open = String(open);
-      };
-      toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
-      nav.addEventListener('click', (e) => {
-        if ((e.target as HTMLElement).closest('a')) setOpen(false);
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-          setOpen(false);
-          toggle.focus();
-        }
-      });
-    }
   </script>
 </Base>
