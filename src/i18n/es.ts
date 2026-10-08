@@ -150,7 +150,7 @@ export const es: Content = {
   work: {
     meta: { title: 'Trabajo · Violeta Calvo', description: 'Casos de estudio y webs de Violeta Calvo: automatización con IA y webs hechas con Sustrai Studio.' },
     eyebrow: 'Trabajo',
-    heading: 'Trabajos seleccionados',
+    heading: 'Algunas cosas que he creado',
     seeAll: 'Ver todo el trabajo',
     patentText: 'Una patente concedida de mis años como ingeniera de diseño y desarrollo en Bonopark.',
     caseStudy: 'Caso de estudio',

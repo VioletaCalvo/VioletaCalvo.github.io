@@ -150,7 +150,7 @@ export const fr: Content = {
   work: {
     meta: { title: 'Réalisations · Violeta Calvo', description: 'Études de cas et sites de Violeta Calvo : automatisation avec l’IA et sites créés avec Sustrai Studio.' },
     eyebrow: 'Réalisations',
-    heading: 'Réalisations choisies',
+    heading: 'Quelques-unes de mes créations',
     seeAll: 'Voir toutes les réalisations',
     patentText: 'Un brevet délivré pendant mes années d’ingénieure conception et développement chez Bonopark.',
     caseStudy: 'Étude de cas',
