@@ -214,7 +214,7 @@ const teasers = [
                   </ul>
                 )}
                 <ul class="chips">
-                  {(job.tags ?? item.tech).map((c) => <li class="chip">{c}</li>)}
+                  {[...(job.extraTags ?? []), ...(job.tags ?? item.tech)].map((c) => <li class="chip">{c}</li>)}
                 </ul>
                 {job.aiNote && (
                   <p class="job-note">

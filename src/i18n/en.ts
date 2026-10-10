@@ -39,7 +39,7 @@ export interface Content {
     careerBreak: string;
     breaks: Record<BreakId, string>;
     duration: (months: number) => string;
-    jobs: Record<JobId, { role: string; intro: string; bullets: string[]; tags?: string[]; aiNote?: { text: string; link: string } }>;
+    jobs: Record<JobId, { role: string; intro: string; bullets: string[]; tags?: string[]; extraTags?: string[]; aiNote?: { text: string; link: string } }>;
   };
   ai: {
     eyebrow: string;
@@ -199,6 +199,7 @@ export const en: Content = {
       },
       hiboo: {
         role: 'Senior Full Stack Engineer',
+        extraTags: ['Hexagonal architecture'],
         intro: 'I joined an experienced team with a flat hierarchy, where everyone had a lot of autonomy and responsibility.',
         bullets: [
           'Backend migrated to a ports and adapters (hexagonal) architecture.',
@@ -208,6 +209,7 @@ export const en: Content = {
       },
       greenly: {
         role: 'Tech Lead · Full Stack Engineer',
+        extraTags: ['Architecture'],
         intro:
           'Tech lead from August 2022. I was glad to coach the team to grow and to help find solutions at a higher level than I had before.',
         bullets: [
@@ -228,6 +230,7 @@ export const en: Content = {
       },
       brozerly: {
         role: 'R&D Full Stack Engineer → Lead Full Stack Engineer',
+        extraTags: ['Architecture'],
         intro:
           'The only full-time developer for the first 10 months, then the only developer and web engineer in the company, working hand in hand with the CEO.',
         bullets: [

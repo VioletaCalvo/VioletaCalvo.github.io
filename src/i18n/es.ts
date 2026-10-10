@@ -83,6 +83,7 @@ export const es: Content = {
       },
       hiboo: {
         role: 'Senior Full Stack Engineer',
+        extraTags: ['Arquitectura hexagonal'],
         intro: 'Me uní a un equipo con experiencia y una jerarquía horizontal, donde todos teníamos mucha autonomía y responsabilidad.',
         bullets: [
           'Migramos el backend a una arquitectura hexagonal (puertos y adaptadores).',
@@ -92,6 +93,7 @@ export const es: Content = {
       },
       greenly: {
         role: 'Tech Lead · Full Stack Engineer',
+        extraTags: ['Arquitectura'],
         intro:
           'Tech Lead desde agosto de 2022. Me alegró acompañar al equipo en su crecimiento y ayudar a encontrar soluciones a un nivel más alto que antes.',
         bullets: [
@@ -112,6 +114,7 @@ export const es: Content = {
       },
       brozerly: {
         role: 'R&D Full Stack Engineer → Lead Full Stack Engineer',
+        extraTags: ['Arquitectura'],
         intro:
           'Fui la única desarrolladora a tiempo completo durante los primeros 10 meses, y después la única desarrolladora e ingeniera web de la empresa, trabajando mano a mano con el CEO.',
         bullets: [
