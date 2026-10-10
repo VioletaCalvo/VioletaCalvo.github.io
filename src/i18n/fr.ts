@@ -152,7 +152,7 @@ export const fr: Content = {
     eyebrow: 'Réalisations',
     heading: 'Quelques-unes de mes créations',
     seeAll: 'Voir toutes les réalisations',
-    patentText: 'Un brevet délivré pendant mes années d’ingénieure conception et développement chez Bonopark.',
+    patentText: 'Un brevet délivré, déposé en 2012, pendant mes années d’ingénieure conception et développement chez Bonopark.',
     caseStudy: 'Étude de cas',
     backHome: 'Retour à l’accueil',
   },
@@ -160,17 +160,20 @@ export const fr: Content = {
     eyebrow: 'Projets',
     heading: 'Sites créés avec Sustrai Studio',
     text: 'Sustrai Studio est ma marque pour les sites de personnes et de groupes proches, de la première idée à la mise en ligne.',
+    backendLabel: 'Backend',
     items: {
       zirkoloretsua: {
         client: 'Compagnie de cirque',
         summary: 'Un site avec ses spectacles et un agenda que la compagnie met à jour seule.',
         text: 'Un site en espagnol et en basque avec ses spectacles et l’agenda des représentations, que la compagnie met à jour seule depuis un espace d’administration avec connexion par code e-mail. Design de Jabugrafik.',
+        backend: 'Un petit Worker Cloudflare avec une base D1 pour l’agenda, et un espace d’administration avec connexion par code e-mail (Cloudflare Access) où la compagnie ajoute ses propres événements.',
         imageAlt: 'Page d’accueil du site de Zirkoloretsua',
       },
       laluciernaga: {
         client: 'Groupe de montagne',
         summary: 'Les randonnées, photos et poèmes du groupe, migrés depuis WordPress, avec connexion des membres.',
         text: 'Le site du groupe avec ses randonnées, ses photos et ses poèmes, migré depuis WordPress. Les membres se connectent pour voir les détails, et une personne administratrice valide chaque nouvel accès.',
+        backend: 'Cloudflare Workers avec une base D1 et le stockage de fichiers R2, connexion avec Better Auth et un espace pour ajouter les entrées des randonnées. Les photos sont réduites dans le navigateur et le serveur refuse celles de plus de 1 Mo.',
         imageAlt: 'Page d’accueil du site de La Luciérnaga',
       },
     },
@@ -178,7 +181,7 @@ export const fr: Content = {
   video: {
     eyebrow: 'Animation',
     heading: 'Animation 3D marketing',
-    text: 'Réalisée pendant mon stage chez HOFF.',
+    text: 'Réalisée pendant mon stage chez HOFF, en 2014.',
     play: 'Lire la vidéo',
     watchOn: 'Voir sur YouTube',
   },
