@@ -85,6 +85,7 @@ const projectShots = { zirkoloretsua: zirkoloretsuaShot, laluciernaga: laluciern
                 <h3 class="job-company">{p.name}</h3>
                 <p class="job-role">{item.client} · {p.year}</p>
                 <p class="job-intro">{item.text}</p>
+                <p class="project-backend"><strong>{t.projects.backendLabel}</strong> {item.backend}</p>
                 <ul class="chips">
                   {p.tech.map((c) => <li class="chip">{c}</li>)}
                 </ul>

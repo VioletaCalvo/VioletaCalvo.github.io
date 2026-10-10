@@ -152,7 +152,7 @@ export const es: Content = {
     eyebrow: 'Trabajo',
     heading: 'Algunas cosas que he creado',
     seeAll: 'Ver todo el trabajo',
-    patentText: 'Una patente concedida de mis años como ingeniera de diseño y desarrollo en Bonopark.',
+    patentText: 'Una patente concedida, solicitada en 2012, de mis años como ingeniera de diseño y desarrollo en Bonopark.',
     caseStudy: 'Caso de estudio',
     backHome: 'Volver al inicio',
   },
@@ -160,17 +160,20 @@ export const es: Content = {
     eyebrow: 'Proyectos',
     heading: 'Webs hechas con Sustrai Studio',
     text: 'Sustrai Studio es mi marca para webs de personas y grupos cercanos, de la primera idea a la publicación.',
+    backendLabel: 'Backend',
     items: {
       zirkoloretsua: {
         client: 'Compañía de circo',
         summary: 'Web con sus espectáculos y una agenda que la compañía actualiza sola.',
         text: 'Web en castellano y euskera con sus espectáculos y la agenda de actuaciones, que la compañía actualiza sola desde un panel con acceso por código de correo. Diseño de Jabugrafik.',
+        backend: 'Un pequeño Worker de Cloudflare con una base de datos D1 para la agenda, y un panel de administración con acceso por código de correo (Cloudflare Access) donde la compañía añade sus propios eventos.',
         imageAlt: 'Portada de la web de Zirkoloretsua',
       },
       laluciernaga: {
         client: 'Grupo de montaña',
         summary: 'Las excursiones, fotos y poesías del grupo, traídas desde WordPress, con acceso para miembros.',
         text: 'Web del grupo con sus excursiones, fotos y poesías, traída desde WordPress. Los miembros entran con su cuenta para ver los detalles, y quien administra aprueba cada acceso nuevo.',
+        backend: 'Cloudflare Workers con base de datos D1 y almacenamiento de archivos R2, acceso con Better Auth y un panel para añadir las entradas de las excursiones. Las fotos se reducen en el navegador y el servidor rechaza las de más de 1 MB.',
         imageAlt: 'Portada de la web de La Luciérnaga',
       },
     },
@@ -178,7 +181,7 @@ export const es: Content = {
   video: {
     eyebrow: 'Animación',
     heading: 'Animación 3D de marketing',
-    text: 'Hecha durante mis prácticas en HOFF.',
+    text: 'Hecha durante mis prácticas en HOFF, en 2014.',
     play: 'Reproducir el vídeo',
     watchOn: 'Ver en YouTube',
   },

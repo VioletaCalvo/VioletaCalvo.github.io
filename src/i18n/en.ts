@@ -57,7 +57,8 @@ export interface Content {
     eyebrow: string;
     heading: string;
     text: string;
-    items: Record<ProjectId, { client: string; summary: string; text: string; imageAlt: string }>;
+    backendLabel: string;
+    items: Record<ProjectId, { client: string; summary: string; text: string; backend: string; imageAlt: string }>;
   };
   video: { eyebrow: string; heading: string; text: string; play: string; watchOn: string };
   roots: {
@@ -267,7 +268,7 @@ export const en: Content = {
     eyebrow: 'Work',
     heading: 'Some things I’ve built',
     seeAll: 'See all work',
-    patentText: 'A granted patent from my time as Design and Development Engineer at Bonopark.',
+    patentText: 'A granted patent, filed in 2012, from my time as Design and Development Engineer at Bonopark.',
     caseStudy: 'Case study',
     backHome: 'Back to home',
   },
@@ -275,17 +276,20 @@ export const en: Content = {
     eyebrow: 'Projects',
     heading: 'Websites made with Sustrai Studio',
     text: 'Sustrai Studio is my own brand for websites for people and groups close to me, from the first idea to going live.',
+    backendLabel: 'Backend',
     items: {
       zirkoloretsua: {
         client: 'Circus company',
         summary: 'A website with their shows and an agenda the company updates on its own.',
         text: 'A website in Spanish and Basque with their shows and an agenda of performances, which the company updates on its own from an admin area with sign-in by email code. Design by Jabugrafik.',
+        backend: 'A small Cloudflare Worker with a D1 database for the agenda, and an admin area behind email-code sign-in (Cloudflare Access) where the company adds its own events.',
         imageAlt: 'Home page of the Zirkoloretsua website',
       },
       laluciernaga: {
         client: 'Mountain group',
         summary: 'The group’s hikes, photos and poems, moved from WordPress, with member sign-in.',
         text: 'The group’s website with its hikes, photos and poems, moved over from WordPress. Members sign in to see the details, and an administrator approves each new access.',
+        backend: 'Cloudflare Workers with a D1 database and R2 file storage, sign-in with Better Auth, and an admin area to add hike entries. Photos are resized in the browser and capped at 1 MB on the server.',
         imageAlt: 'Home page of the La Luciérnaga website',
       },
     },
@@ -293,7 +297,7 @@ export const en: Content = {
   video: {
     eyebrow: 'Animation',
     heading: '3D marketing animation',
-    text: 'Made during my internship at HOFF.',
+    text: 'Made during my internship at HOFF, in 2014.',
     play: 'Play the video',
     watchOn: 'Watch on YouTube',
   },

@@ -809,6 +809,17 @@ details[open] > .job-summary .job-chevron {
   gap: 12px;
   padding: 28px 32px 32px;
 }
+.project-backend {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+.project-backend strong {
+  display: block;
+  font-weight: 600;
+  color: var(--green-deep);
+}
 .badge {
   height: 28px;
   padding: 0 12px;
